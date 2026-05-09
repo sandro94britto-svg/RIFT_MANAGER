@@ -261,9 +261,9 @@ export const teams = [
     regionId: "lcp",
   },
           {
-    id: "cfo",
-    name: "CTBC Flying Oyster",
-    logo: "/teams/lcp/cfo.png",
+    id: "gam",
+    name: "GAM Esports",
+    logo: "/teams/lcp/gam.png",
     regionId: "lcp",
   },
           {
@@ -273,7 +273,7 @@ export const teams = [
     regionId: "lcp",
   },
           {
-    id: "dfn",
+    id: "dfm",
     name: "DetonatioN FocusMe",
     logo: "/teams/lcp/dfm.png",
     regionId: "lcp",
