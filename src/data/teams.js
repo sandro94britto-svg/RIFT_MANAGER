@@ -146,7 +146,7 @@ export const teams = [
     regionId: "kr",
   },
     {
-    id: "bro",
+    id: "brion",
     name: "Hanjin Brion",
     logo: "/teams/kr/bro.png",
     regionId: "kr",
@@ -158,7 +158,7 @@ export const teams = [
   },
     {
     id: "dns",
-    name: "DN Soopers",
+    name: "DN SOOPers",
     logo: "/teams/kr/dns.png",
     regionId: "kr",
   },
