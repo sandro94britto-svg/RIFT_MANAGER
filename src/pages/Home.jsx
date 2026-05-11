@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useGame } from "../context/GameContext";
 
 export default function Home() {
   const navigate = useNavigate();
+  const { saves } = useGame();
+  const hasSave = saves.length > 0;
 
   return (
     <div className="fixed inset-0">
@@ -26,10 +29,14 @@ export default function Home() {
               Nouvelle Partie
             </button>
 
-            <button className="bg-gray-700 hover:bg-gray-600 px-20 py-5 rounded text-white whitespace-nowrap">
-              Charger Partie
-            </button>
-
+            {hasSave && (
+              <button
+                onClick={() => navigate("/load-game")}
+                className="bg-gray-700 hover:bg-gray-600 px-20 py-5 rounded text-white whitespace-nowrap"
+              >
+                Charger Partie
+              </button>
+            )}
           </div>
 
         </div>

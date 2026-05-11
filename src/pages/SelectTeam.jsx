@@ -2,23 +2,19 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { teams } from "../data/teams";
 import { players } from "../data/players";
+import { regions } from "../data/regions";
+import { useGame } from "../context/GameContext";
 
 export default function SelectTeam() {
   const { regionId } = useParams();
+  const currentRegion = regions.find((region) => region.id === regionId);
+
   const navigate = useNavigate();
+  const { createSave } = useGame();
   const [selectedTeam, setSelectedTeam] = useState(null);
-
-  const regionNames = {
-    eu: "League of Legends European Championship",
-    na: "League of Legends Championship Series",
-    kr: "League of Legends Champions Korea",
-    cn: "League of Legends Pro League",
-  };
-
   const teamsInRegion = teams.filter(
     (team) => team.regionId === regionId
   );
-
   const playersInTeam = players.filter(
     (p) => p.teamId === selectedTeam?.id
   );
@@ -54,9 +50,12 @@ export default function SelectTeam() {
       {/* LEFT — TEAMS */}
       <div className="w-1/3 flex flex-col h-full p-6">
 
-        <h1 className="text-white text-2xl font-bold mb-3">
-          {regionNames[regionId] || "Région"}
-        </h1>
+<div className="flex justify-center items-center mb-2">
+  <img
+    src={currentRegion?.banner}
+    className="h-20 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+  />
+</div>
 
         <div className={`
              grid gap-2 flex-1 auto-rows-fr
@@ -112,7 +111,7 @@ export default function SelectTeam() {
                     key={p.id}
                     className={`
                       flex flex-col items-center text-white
-                      bg-white/5 hover:bg-white/10 p-4 rounded-xl
+                      bg-white/20 hover:bg-white/30 p-4 rounded-xl
                       transition hover:scale-105}
                     `}
                   >
@@ -143,12 +142,20 @@ export default function SelectTeam() {
             {/* VALIDATE BUTTON */}
             <div className="mt-auto flex justify-end pt-10">
               <button
-                onClick={() => console.log("TEAM SELECTED:", selectedTeam)}
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition"
-              >
-                Valider l'équipe
-              </button>
-            </div>
+                onClick={() => {
+                  setTimeout(() => {
+                    navigate("/new-manager", {
+                      state : {
+                        selectedTeam,
+                      }
+                    });
+                  }, 0);
+                }}
+              className="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg"
+            >
+              Valider
+            </button>
+          </div>
           </>
         )}
 
