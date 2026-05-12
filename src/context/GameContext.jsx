@@ -31,8 +31,17 @@ export function GameProvider({ children }) {
         setActiveSave(found || null);
     };
 
+    const deleteSave = (id) => {
+        setSaves(prev => 
+            prev.filter(save => save.id !== id)
+        );
+        if (activeSave?.id === id) {
+            setActiveSave(null);
+        }
+    };
+
     return (
-        <GameContext.Provider value={{ saves, activeSave, setSaves, createSave, loadSave }}>
+        <GameContext.Provider value={{ saves, setSaves, activeSave, setActiveSave, createSave, loadSave, deleteSave }}>
             {children}
         </GameContext.Provider>
     );
