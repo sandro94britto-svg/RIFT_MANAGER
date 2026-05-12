@@ -2935,7 +2935,7 @@ export const players = [
     role: "MID",
     rating: 92,
     teamId: "wei",
-    picture: "/players/faker.png",
+    picture: "/players/xiaohu.png",
   },
     {
     firstname: "Zhao",
