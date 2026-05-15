@@ -1894,7 +1894,7 @@ export const players = [
     alias: "Siwoo",
     role: "TOP",
     rating: 81,
-    teamId: "dpls",
+    teamId: "dk",
     picture: "/players/siwoo.png",
   },
     {
@@ -1904,7 +1904,7 @@ export const players = [
     alias: "Lucid",
     role: "JGL",
     rating: 83,
-    teamId: "dpls",
+    teamId: "dk",
     picture: "/players/lucid.png",
   },
     {
@@ -1914,7 +1914,7 @@ export const players = [
     alias: "Showmaker",
     role: "MID",
     rating: 92,
-    teamId: "dpls",
+    teamId: "dk",
     picture: "/players/showmaker.png",
   },
     {
@@ -1924,7 +1924,7 @@ export const players = [
     alias: "Smash",
     role: "ADC",
     rating: 88,
-    teamId: "dpls",
+    teamId: "dk",
     picture: "/players/smash.png",
   },
     {
@@ -1934,7 +1934,7 @@ export const players = [
     alias: "Career",
     role: "SUP",
     rating: 79,
-    teamId: "dpls",
+    teamId: "dk",
     picture: "/players/career.png",
   },
         // ===== GEN.G =====
@@ -2812,7 +2812,7 @@ export const players = [
     alias: "369",
     role: "TOP",
     rating: 81,
-    teamId: "top",
+    teamId: "tes",
     picture: "/players/369.png",
   },
     {
@@ -2822,7 +2822,7 @@ export const players = [
     alias: "Naiyou",
     role: "JGL",
     rating: 83,
-    teamId: "top",
+    teamId: "tes",
     picture: "/players/naiyou.png",
   },
     {
@@ -2832,7 +2832,7 @@ export const players = [
     alias: "Creme",
     role: "MID",
     rating: 92,
-    teamId: "top",
+    teamId: "tes",
     picture: "/players/creme.png",
   },
     {
@@ -2842,7 +2842,7 @@ export const players = [
     alias: "JackeyLove",
     role: "ADC",
     rating: 88,
-    teamId: "top",
+    teamId: "tes",
     picture: "/players/jackeylove.png",
   },
     {
@@ -2852,7 +2852,7 @@ export const players = [
     alias: "Fengyue",
     role: "SUP",
     rating: 79,
-    teamId: "top",
+    teamId: "tes",
     picture: "/players/fengyue.png",
   },
         // ===== ULTRA PRIME =====

@@ -7,7 +7,7 @@ export default function RecentResultsWidget() {
       p-6
       h-full
     ">
-      <h2 className="text-white text-2xl font-bold mb-4">
+      <h2 className="text-white text-sm font-bold mb-4">
         Derniers résultats
       </h2>
     </div>

@@ -54,6 +54,12 @@ export const teams = [
     logo: "/teams/eu/th.png",
     regionId: "eu",
   },
+        {
+    id: "sk",
+    name: "SK Gaming",
+    logo: "/teams/eu/sk.png",
+    regionId: "eu",
+  },
         // ===== LCS =====
       {
     id: "c9",
@@ -129,11 +135,12 @@ export const teams = [
     regionId: "kr",
   },
     {
-    id: "dpls",
+    id: "dk",
     name: "Dplus KIA",
-    logo: "/teams/kr/dplus.png",
+    logo: "/teams/kr/dk.png",
     regionId: "kr",
-  },  {
+  },  
+  {
     id: "ns",
     name: "Nongshim RedForce",
     logo: "/teams/kr/ns.png",
@@ -182,9 +189,9 @@ export const teams = [
     regionId: "cn",
   },
       {
-    id: "top",
+    id: "tes",
     name: "TOP Esports",
-    logo: "/teams/cn/top.png",
+    logo: "/teams/cn/tes.png",
     regionId: "cn",
   },
       {

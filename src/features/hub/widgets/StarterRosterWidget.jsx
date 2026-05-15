@@ -16,10 +16,11 @@ export default function StarterRosterWidget() {
     <div className="
       bg-white/5
       rounded-2xl
-      p-6
       h-full
       flex
       flex-col
+      justify-between
+      py-1
     ">
 
       {/* HEADER */}
@@ -41,7 +42,7 @@ export default function StarterRosterWidget() {
               hover:bg-white/10
               transition
               rounded-xl
-              p-4
+              p-0
               flex
               flex-col
               items-center

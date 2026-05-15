@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useGame } from "../context/GameContext";
+import { initializeWorld } from "../game/world/initializeWorld";
 
 export default function CreateManager() {
 
@@ -14,6 +15,8 @@ export default function CreateManager() {
   const [lastName, setLastName] = useState("");
   const [nickname, setNickname] = useState("");
   const [avatar, setAvatar] = useState(null);
+  const world = initializeWorld();
+
 
   if (!selectedTeam) {
     return (
@@ -106,6 +109,7 @@ export default function CreateManager() {
                 money: 500000,
                 currentWeek: 1,
                 currentSplit: 1,
+                world,
               };
 
               createSave(newSave);

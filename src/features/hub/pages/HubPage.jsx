@@ -1,51 +1,38 @@
 import StarterRosterWidget from "../widgets/StarterRosterWidget";
 import UpcomingMatchWidget from "../widgets/UpcomingMatchWidget";
-import RecentFormWidget from "../widgets/RecentFormWidget";
 import RecentResultsWidget from "../widgets/RecentResultsWidget";
 import StandingsWidget from "../widgets/StandingsWidget";
 
 export default function HubPage() {
 
   return (
+
     <div className="
       grid
-      grid-cols-3
-      gap-6
+      grid-cols-12
+      grid-rows-8
+      gap-4
       h-full
     ">
 
-      {/* LEFT COLUMN */}
-      <div className="
-        col-span-2
-        flex
-        flex-col
-        gap-6
-      ">
-
-        <div className="h-[260px]">
-          <StarterRosterWidget />
-        </div>
-
-        <RecentFormWidget />
-
-        <div className="flex-1">
-          <RecentResultsWidget />
-        </div>
-
+      {/* 🟦 ROSTER */}
+      <div className="col-span-8 row-span-2">
+        <StarterRosterWidget />
       </div>
 
-      {/* RIGHT COLUMN */}
-      <div className="h-full">
-
+      {/* 🟩 UPCOMING MATCH */}
+      <div className="col-span-4 row-span-2">
         <UpcomingMatchWidget />
-
       </div>
 
-      {/* BOTTOM */}
-      <div className="col-span-3 h-[320px]">
+      {/* 🟥 RECENT RESULTS */}
+      <div className="col-span-12 row-span-1">
+        <RecentResultsWidget />
+      </div>
 
+      {/* 🟨 STANDINGS */}
+      <div className="col-span-12 row-span-5">
         <StandingsWidget />
-
       </div>
 
     </div>

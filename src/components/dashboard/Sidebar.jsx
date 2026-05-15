@@ -11,7 +11,7 @@ export default function Sidebar({
 
   return (
     <div className="
-      w-[270px]
+      w-[225px]
       bg-[#151922]
       border-r
       border-white/10
