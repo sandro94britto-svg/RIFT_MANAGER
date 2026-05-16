@@ -27,6 +27,19 @@ export default function UpcomingMatchWidget() {
     (team) => team.id === nextMatch.awayTeamId
   );
 
+  const formattedDateRaw = new Date(nextMatch.scheduledDate).toLocaleDateString(
+    "fr-FR",
+    {
+      weekday: "long",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }
+  );
+  const formattedDate =
+  formattedDateRaw.charAt(0).toUpperCase() +
+  formattedDateRaw.slice(1);
+
   return (
     <div className="
       bg-white/5
@@ -48,6 +61,7 @@ export default function UpcomingMatchWidget() {
         flex
         items-center
         justify-center
+        relative
       ">
 
         <div className="
@@ -76,7 +90,7 @@ export default function UpcomingMatchWidget() {
               font-medium
               text-center
             ">
-              {homeTeam?.name}
+              {homeTeam?.shortname}
             </span>
 
           </div>
@@ -110,12 +124,20 @@ export default function UpcomingMatchWidget() {
               font-medium
               text-center
             ">
-              {awayTeam?.name}
+              {awayTeam?.shortname}
             </span>
 
           </div>
 
         </div>
+          <div className="
+            absolute
+            bottom-4
+            text-sm
+            opacity-60
+          ">
+            {formattedDate}
+          </div>
 
       </div>
 

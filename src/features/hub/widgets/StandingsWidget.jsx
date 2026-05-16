@@ -102,8 +102,6 @@ const getTeamData = (teamId) => {
 
                 {standings.slice(0, 14).map((team, index) => {
                   const teamData = getTeamData(team.teamId);
-                  console.log(team);
-                  console.log(team.teamId);
                   return (
                   <div
                     key={team.teamId}
