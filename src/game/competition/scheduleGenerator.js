@@ -2,14 +2,13 @@
 // scheduleGenerator.js
 // =====================================================
 
-import { STAGE_TYPES }
-from "./competitionFormats";
+import {
+  STAGE_TYPES,
+  FORMAT_TYPES,
+} from "./competitionFormats";
 
 import { createMatch }
 from "../matches/createMatch";
-
-import { addDays }
-from "../matches/matchUtils";
 
 import { generateRoundRobin }
 from "../generators/roundRobinGenerator";
@@ -17,8 +16,20 @@ from "../generators/roundRobinGenerator";
 import { generateSwissRound }
 from "../generators/swissGenerator";
 
-import { generatePlayoffBracket }
-from "../generators/playoffGenerator";
+import {
+  distributeMatchesIntoWeeks
+}
+from "../calendar/weeklyScheduler";
+
+import {
+  scheduleWeekMatches
+}
+from "../calendar/calendarScheduler";
+
+import {
+  generateCrossGroupPairings,
+}
+from "../generators/crossGroupGenerator";
 
 // =====================================================
 
@@ -28,95 +39,288 @@ export function generateCompetitionSchedule(
 
   const allMatches = [];
 
-  let currentDate = competition.startDate;
+  let globalWeekOffset = 0;
 
-  // ---------------------------------------------------
+  // ===================================================
   // LOOP STAGES
-  // ---------------------------------------------------
+  // ===================================================
 
   for (const stage of competition.format.stages) {
 
     let pairings = [];
 
-    // -------------------------------------------------
+    // =================================================
     // REGULAR SEASON
-    // -------------------------------------------------
+    // =================================================
 
     if (
-      stage.type === STAGE_TYPES.REGULAR_SEASON
+
+      stage.type ===
+      STAGE_TYPES.REGULAR_SEASON
     ) {
 
-      pairings = generateRoundRobin(
-        competition.teams,
-        {
-          doubleRoundRobin:
-            stage.format === "DOUBLE_ROUND_ROBIN",
-        }
-      );
+      // ===============================================
+      // SINGLE ROUND ROBIN
+      // ===============================================
+
+      if (
+
+        stage.format ===
+        FORMAT_TYPES.SINGLE_ROUND_ROBIN
+      ) {
+
+        pairings =
+          generateRoundRobin(
+            competition.teams,
+            {
+              doubleRoundRobin: false,
+            }
+          );
+      }
+
+      // ===============================================
+      // DOUBLE ROUND ROBIN
+      // ===============================================
+
+      else if (
+
+        stage.format ===
+        FORMAT_TYPES.DOUBLE_ROUND_ROBIN
+      ) {
+
+        pairings =
+          generateRoundRobin(
+            competition.teams,
+            {
+              doubleRoundRobin: true,
+            }
+          );
+      }
+
+      // ===============================================
+      // SWISS
+      // ===============================================
+
+      else if (
+
+        stage.format ===
+        FORMAT_TYPES.SWISS
+      ) {
+
+        pairings =
+          generateSwissRound(
+            competition.teams
+          );
+      }
+
+      // ===============================================
+      // CROSS GROUP
+      // ===============================================
+
+      else if (
+
+        stage.format ===
+        FORMAT_TYPES.CROSS_GROUP
+      ) {
+
+        pairings =
+          generateCrossGroupPairings({
+
+            groups:
+              competition.format
+                .initialGroups,
+          });
+      }
+
+      // ===============================================
+      // GROUPS
+      // ===============================================
+
+      else if (
+
+        stage.format ===
+        FORMAT_TYPES.GROUPS
+      ) {
+
+        pairings = [];
+      }
     }
 
-    // -------------------------------------------------
-    // SWISS
-    // -------------------------------------------------
+    // =================================================
+    // DYNAMIC STAGES
+    // =================================================
 
     else if (
-      stage.type === STAGE_TYPES.SWISS_STAGE
+
+      stage.type ===
+      STAGE_TYPES.SEEDING_STAGE ||
+
+      stage.type ===
+      STAGE_TYPES.PLAY_IN ||
+
+      stage.type ===
+      STAGE_TYPES.PLAYOFFS ||
+
+      stage.type ===
+      STAGE_TYPES.KNOCKOUT
     ) {
 
-      pairings = generateSwissRound(
-        competition.teams
-      );
+      // IMPORTANT:
+      // generated later dynamically
+
+      continue;
     }
 
-    // -------------------------------------------------
-    // PLAYOFFS
-    // -------------------------------------------------
+    // =================================================
+    // DEBUG PAIRINGS
+    // =================================================
 
-    else if (
-      stage.type === STAGE_TYPES.PLAYOFFS
-    ) {
+    console.log(
+      "PAIRINGS:",
+      competition.id,
+      pairings.map(p => ({
+        round: p.round,
+        home: p.homeTeamId,
+        away: p.awayTeamId,
+      }))
+    );
 
-      pairings = generatePlayoffBracket(
-        competition.teams.slice(0, 8)
-      );
-    }
+    // =================================================
+    // DISTRIBUTE INTO WEEKS
+    // =================================================
 
-    // -------------------------------------------------
-    // CREATE MATCHES
-    // -------------------------------------------------
+    const weeks =
+      distributeMatchesIntoWeeks({
 
-    for (const pairing of pairings) {
+        pairings,
 
-      const bestOf =
-        stage.matchRules.bestOf ||
-        stage.matchRules.early?.bestOf ||
-        1;
+        teams:
+          competition.teams,
 
-      const match = createMatch({
+        totalWeeks:
+          stage.calendarRules
+            ?.totalWeeks || 3,
 
-        competitionId: competition.id,
-
-        stageType: stage.type,
-
-        round: pairing.round || 1,
-
-        scheduledDate: currentDate,
-
-        homeTeamId: pairing.homeTeamId,
-        awayTeamId: pairing.awayTeamId,
-
-        bestOf,
-
-        fearlessDraft:
-          stage.draftRules.fearlessDraft,
+        matchesPerWeek:
+          stage.calendarRules
+            ?.matchesPerWeek || 15,
       });
 
-      allMatches.push(match);
+    // =================================================
+    // SCHEDULE WEEKS
+    // =================================================
 
-      // next day
-      currentDate = addDays(currentDate, 1);
+    for (const week of weeks) {
+
+      const weekStartDate =
+        new Date(
+          competition.startDate
+        );
+
+      weekStartDate.setDate(
+
+        weekStartDate.getDate() +
+
+        (globalWeekOffset * 7)
+      );
+
+      const scheduledMatches =
+        scheduleWeekMatches({
+
+          weekMatches:
+            week.matches,
+
+          weekStartDate,
+
+          allowedDays:
+            stage.calendarRules
+              ?.allowedDays || [6,0,1],
+
+          matchesPerDay:
+            stage.calendarRules
+              ?.matchesPerDay || 5,
+        });
+
+      // ===============================================
+      // CREATE MATCHES
+      // ===============================================
+
+      for (
+        const pairing
+        of scheduledMatches
+      ) {
+
+        const bestOf =
+
+          stage.matchRules?.bestOf ||
+
+          stage.matchRules?.early?.bestOf ||
+
+          1;
+
+        const match =
+          createMatch({
+
+            competitionId:
+              competition.id,
+
+            stageType:
+              stage.type,
+
+            round:
+              pairing.round || 1,
+
+            scheduledDate:
+              pairing.scheduledDate,
+
+            homeTeamId:
+              pairing.homeTeamId,
+
+            awayTeamId:
+              pairing.awayTeamId,
+
+            bestOf,
+
+            fearlessDraft:
+              stage.draftRules
+                ?.fearlessDraft || false,
+          });
+
+        allMatches.push(match);
+      }
+
+      globalWeekOffset++;
     }
   }
+
+  // ===================================================
+  // DEBUG TEAM
+  // ===================================================
+
+  const debugTeam = "dk";
+
+  const teamMatches =
+    allMatches.filter(match =>
+
+      match.homeTeamId === debugTeam ||
+
+      match.awayTeamId === debugTeam
+    );
+
+  console.log(
+    "DK MATCHES:",
+    teamMatches.map(match => ({
+      round: match.round,
+
+      opponent:
+
+        match.homeTeamId === debugTeam
+          ? match.awayTeamId
+          : match.homeTeamId,
+
+      date: match.scheduledDate,
+    }))
+  );
 
   return allMatches;
 }

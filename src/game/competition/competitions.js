@@ -1,6 +1,8 @@
 // =====================================================
 // competitions.js (WORLD LAYER - V2)
 // =====================================================
+import { generateCompetitionSchedule } from "./scheduleGenerator";
+
 
 import {
   competitionFormats,
@@ -21,17 +23,42 @@ const createCompetition = ({
   endDate,
   format,
   teams,
-}) => ({
-  id,
-  name,
-  league,
-  year,
-  split,
-  startDate,
-  endDate,
-  format,
-  teams,
-});
+}) => {
+
+  const competition = {
+
+    id,
+    name,
+    league,
+    year,
+    split,
+
+    startDate,
+    endDate,
+
+    format,
+
+    teams,
+
+    matches: [],
+
+  };
+
+  // ---------------------------------------------------
+  // GENERATE SCHEDULE
+  // ---------------------------------------------------
+
+  competition.matches =
+    generateCompetitionSchedule(
+      competition
+    );
+console.log(
+  competition.id,
+  competition.matches.length
+);
+
+  return competition;
+};
 
 // -----------------------------------------------------
 // TEAMS (PLACEHOLDER IDS ONLY)

@@ -6,6 +6,7 @@ import Topbar from "../components/dashboard/Topbar";
 import Tabs from "../components/dashboard/Tabs";
 
 import HubPage from "../features/hub/pages/HubPage";
+import CalendarPage from "../features/calendar/pages/CalendarPage";
 
 export default function Dashboard() {
 
@@ -121,6 +122,9 @@ export default function Dashboard() {
 
           {activeMenu === "Hub" && (
             <HubPage />
+          )}
+          {activeMenu === "Calendrier" && (
+            <CalendarPage />
           )}
 
         </main>

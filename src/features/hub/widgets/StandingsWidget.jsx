@@ -23,12 +23,8 @@ export default function StandingsWidget() {
   };
 
 const getTeamData = (teamId) => {
-
-  console.log(
-    "SEARCHING:",
-    `"${teamId}"`,
+    "${teamId}",
     teams.map(t => `"${t.id}"`)
-  );
 
   return teams.find(
     (team) => team.id === teamId
