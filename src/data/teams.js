@@ -9,6 +9,9 @@ export const teams = [
     fullname: "G2 Esports",
     logo: "/teams/eu/g2.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
   {
     id: "fnc",
@@ -17,6 +20,9 @@ export const teams = [
     fullname: "Fnatic",
     logo: "/teams/eu/fnc.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "vit",
@@ -25,6 +31,9 @@ export const teams = [
     fullname: "Team Vitality",
     logo: "/teams/eu/vit.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "navi",
@@ -33,6 +42,9 @@ export const teams = [
     fullname: "Navi Vincere",
     logo: "/teams/eu/navi.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "kc",
@@ -41,6 +53,9 @@ export const teams = [
     fullname: "Karmine Corp",
     logo: "/teams/eu/kc.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "gx",
@@ -49,6 +64,9 @@ export const teams = [
     fullname: "GIANTX",
     logo: "/teams/eu/gx.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "shft",
@@ -57,6 +75,9 @@ export const teams = [
     fullname: "Shifters",
     logo: "/teams/eu/shft.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
     {
     id: "mkoi",
@@ -65,6 +86,9 @@ export const teams = [
     fullname: "Movistar KOI",
     logo: "/teams/eu/mkoi.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
       {
     id: "th",
@@ -73,6 +97,9 @@ export const teams = [
     fullname: "Team Heretics",
     logo: "/teams/eu/th.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
   },
         {
     id: "sk",
@@ -81,6 +108,31 @@ export const teams = [
     fullname: "SK Gaming",
     logo: "/teams/eu/sk.png",
     regionId: "eu",
+
+    isPlayable : true,
+    isVisible: true,
+  },
+    {
+    id: "kcb",
+    shortname: "KCB",
+    name: "KC Blue",
+    fullname: "Karmine Corp Blue",
+    logo: "/teams/eu/kcb.png",
+    regionId: "erl",
+
+    isPlayable : false,
+    isVisible: true,
+  },
+      {
+    id: "lr",
+    shortname: "LR",
+    name: "Los Ratones",
+    fullname: "Los Ratones",
+    logo: "/teams/eu/lr.png",
+    regionId: "erl",
+
+    isPlayable : false,
+    isVisible: true,
   },
         // ===== LCS =====
       {
@@ -90,6 +142,8 @@ export const teams = [
     fullname: "Cloud9 Kia",
     logo: "/teams/na/c9.png",
     regionId: "na",
+    isPlayable : false,
+    isVisible: true,    
   },
       {
     id: "tl",
@@ -98,6 +152,8 @@ export const teams = [
     fullname: "Team Liquid Alienware",
     logo: "/teams/na/tl.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "lyon",
@@ -106,6 +162,8 @@ export const teams = [
     fullname: "LYON",
     logo: "/teams/na/lyon.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "fly",
@@ -114,6 +172,8 @@ export const teams = [
     fullname: "FlyQuest",
     logo: "/teams/na/fly.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "dis",
@@ -122,6 +182,8 @@ export const teams = [
     fullname: "Disguised",
     logo: "/teams/na/dis.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "sr",
@@ -130,6 +192,8 @@ export const teams = [
     fullname: "Shopify Rebellion",
     logo: "/teams/na/sr.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "sen",
@@ -138,6 +202,8 @@ export const teams = [
     fullname: "Sentinels",
     logo: "/teams/na/sen.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "dig",
@@ -146,6 +212,8 @@ export const teams = [
     fullname: "Dignitas",
     logo: "/teams/na/dig.png",
     regionId: "na",
+        isPlayable : false,
+    isVisible: true,
   },
         // ===== LCK =====
   {
@@ -155,6 +223,8 @@ export const teams = [
     fullname: "T1",
     logo: "/teams/kr/t1.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "hle",
@@ -163,6 +233,8 @@ export const teams = [
     fullname: "Hanwha Life Esports",
     logo: "/teams/kr/hle.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "kt",
@@ -171,6 +243,8 @@ export const teams = [
     fullname: "kt Rolster",
     logo: "/teams/kr/kt.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "gen",
@@ -179,6 +253,8 @@ export const teams = [
     fullname: "Gen.G Esports",
     logo: "/teams/kr/geng.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "dk",
@@ -187,6 +263,8 @@ export const teams = [
     fullname: "Dplus KIA",
     logo: "/teams/kr/dk.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },  
   {
     id: "ns",
@@ -195,6 +273,8 @@ export const teams = [
     fullname: "Nongshim RedForce",
     logo: "/teams/kr/ns.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "bnk",
@@ -203,6 +283,8 @@ export const teams = [
     fullname: "BNK FEARX",
     logo: "/teams/kr/bnk.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "brion",
@@ -211,6 +293,8 @@ export const teams = [
     fullname: "HANJIN BRION",
     logo: "/teams/kr/bro.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },  {
     id: "drx",
     shortname: "KRX",
@@ -218,6 +302,8 @@ export const teams = [
     fullname: "KIWOOM DRX",
     logo: "/teams/kr/drx.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "dns",
@@ -226,6 +312,8 @@ export const teams = [
     fullname: "DN SOOPers",
     logo: "/teams/kr/dns.png",
     regionId: "kr",
+        isPlayable : false,
+    isVisible: true,
   },
         // ===== LPL =====
     {
@@ -235,6 +323,8 @@ export const teams = [
     fullname: "BILIBILI GAMING",
     logo: "/teams/cn/blg.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "jdg",
@@ -243,6 +333,8 @@ export const teams = [
     fullname: "Beijing JDG Esports",
     logo: "/teams/cn/jdg.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "al",
@@ -251,6 +343,8 @@ export const teams = [
     fullname: "Anyone's Legend",
     logo: "/teams/cn/al.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "tes",
@@ -259,6 +353,8 @@ export const teams = [
     fullname: "TOP Esports",
     logo: "/teams/cn/tes.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "nip",
@@ -267,6 +363,8 @@ export const teams = [
     fullname: "Shenzhen NINJAS IN PYJAMAS",
     logo: "/teams/cn/nip.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "ig",
@@ -275,6 +373,8 @@ export const teams = [
     fullname: "Invictus Gaming",
     logo: "/teams/cn/ig.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "wei",
@@ -283,6 +383,8 @@ export const teams = [
     fullname: "WeiboGaming",
     logo: "/teams/cn/wei.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "we",
@@ -291,6 +393,8 @@ export const teams = [
     fullname: "Xi'an Team WE",
     logo: "/teams/cn/we.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "lgd",
@@ -299,6 +403,8 @@ export const teams = [
     fullname: "LGD GAMING",
     logo: "/teams/cn/lgd.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "edg",
@@ -307,6 +413,8 @@ export const teams = [
     fullname: "EDWARD GAMING",
     logo: "/teams/cn/edg.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "lng",
@@ -315,6 +423,8 @@ export const teams = [
     fullname: "Suzhou LNG Esports",
     logo: "/teams/cn/lng.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "ttg",
@@ -323,6 +433,8 @@ export const teams = [
     fullname: "THUNDER TALK GAMING",
     logo: "/teams/cn/ttg.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "up",
@@ -331,6 +443,8 @@ export const teams = [
     fullname: "Ultra Prime",
     logo: "/teams/cn/up.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
       {
     id: "omg",
@@ -339,6 +453,8 @@ export const teams = [
     fullname: "Oh My God",
     logo: "/teams/cn/omg.png",
     regionId: "cn",
+        isPlayable : false,
+    isVisible: true,
   },
           // ===== LCP =====
         {
@@ -348,6 +464,8 @@ export const teams = [
     fullname: "CTBC Flying Oyster",
     logo: "/teams/lcp/cfo.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "deep",
@@ -356,6 +474,8 @@ export const teams = [
     fullname: "Resolve Deep Cross Gaming",
     logo: "/teams/lcp/deep.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "gam",
@@ -364,6 +484,8 @@ export const teams = [
     fullname: "GAM Esports",
     logo: "/teams/lcp/gam.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "softbank",
@@ -372,6 +494,8 @@ export const teams = [
     fullname: "Fukuoka SoftBank Hawks Gaming",
     logo: "/teams/lcp/softbank.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "dfm",
@@ -380,6 +504,8 @@ export const teams = [
     fullname: "DetonatioN FocusMe",
     logo: "/teams/lcp/dfm.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "groundzero",
@@ -388,6 +514,8 @@ export const teams = [
     fullname: "Ground Zero Gaming",
     logo: "/teams/lcp/groundzero.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "mvk",
@@ -396,6 +524,8 @@ export const teams = [
     fullname: "MVK Esports",
     logo: "/teams/lcp/mvk.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "tsw",
@@ -404,6 +534,8 @@ export const teams = [
     fullname: "Team Secret Whales",
     logo: "/teams/lcp/tsw.png",
     regionId: "lcp",
+        isPlayable : false,
+    isVisible: true,
   },
           // ===== CBLOL =====
         {
@@ -413,6 +545,8 @@ export const teams = [
     fullname: "Fluxo W7M",
     logo: "/teams/cblol/fluxo.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "furia",
@@ -421,6 +555,8 @@ export const teams = [
     fullname: "Furia",
     logo: "/teams/cblol/furia.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "leviatan",
@@ -429,6 +565,8 @@ export const teams = [
     fullname: "LEVIATAN",
     logo: "/teams/cblol/leviatan.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "loud",
@@ -437,6 +575,8 @@ export const teams = [
     fullname: "LOUD",
     logo: "/teams/cblol/loud.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
           {
     id: "pain",
@@ -445,6 +585,8 @@ export const teams = [
     fullname: "paIN Gaming",
     logo: "/teams/cblol/paingaming.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
     {
     id: "redcanids",
@@ -453,6 +595,8 @@ export const teams = [
     fullname: "Red Canids Kalunga",
     logo: "/teams/cblol/redcanids.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
             {
     id: "vivokeyd",
@@ -461,6 +605,8 @@ export const teams = [
     fullname: "Vivo Keyd Stars",
     logo: "/teams/cblol/vivokeyd.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
             {
     id: "los",
@@ -469,5 +615,7 @@ export const teams = [
     fullname: "LØS",
     logo: "/teams/cblol/los.png",
     regionId: "cblol",
+        isPlayable : false,
+    isVisible: true,
   },
 ];

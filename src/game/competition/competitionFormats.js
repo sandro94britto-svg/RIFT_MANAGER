@@ -85,12 +85,13 @@ export const LEC_2026_WINTER = {
       format: FORMAT_TYPES.SINGLE_ROUND_ROBIN,
       matchRules: MATCH_RULES.BO1,
       draftRules: DRAFT_RULES.STANDARD,
+      realCalendar: true,
       teamsQualified: 8,
       calendarRules: {
-        totalWeeks: 3,
+        totalWeeks: 4,
         allowedDays: [6, 0, 1],
-        matchesPerDay: 5,
-        matchesPerWeek: 16,
+        matchesPerDay: 6,
+        matchesPerWeek: 18,
       }
     }),
     stage({

@@ -2,6 +2,10 @@
 // competitions.js (WORLD LAYER - V2)
 // =====================================================
 import { generateCompetitionSchedule } from "./scheduleGenerator";
+import {
+  lecWinter2026Schedule
+}
+from "../data/realCalendars/lecWinter2026";
 
 
 import {
@@ -23,25 +27,20 @@ const createCompetition = ({
   endDate,
   format,
   teams,
+  realSchedule,
 }) => {
 
   const competition = {
-
     id,
     name,
     league,
     year,
     split,
-
     startDate,
     endDate,
-
     format,
-
     teams,
-
-    matches: [],
-
+   realSchedule,
   };
 
   // ---------------------------------------------------
@@ -67,7 +66,7 @@ console.log(
 
 const LEC_TEAMS = [
   "g2", "fnc", "navi", "shft", "sk",
-  "gx", "vit", "kc", "th", "mkoi"
+  "gx", "vit", "kc", "th", "mkoi", "lr", "kcb"
 ];
 
 const LCS_TEAMS = [
@@ -116,9 +115,10 @@ export const competitions = [
     endDate: "2026-03-01",
     format: competitionFormats.LEC_2026_WINTER,
     teams: LEC_TEAMS,
+    realSchedule: lecWinter2026Schedule,
   }),
 
-  createCompetition({
+  /*createCompetition({
     id: "lec_spring_2026",
     name: "LEC Spring Split 2026",
     league: "LEC",
@@ -140,7 +140,7 @@ export const competitions = [
     endDate: "2026-09-01",
     format: competitionFormats.LEC_2026_SUMMER,
     teams: LEC_TEAMS,
-  }),
+  }),*/
 
   // =====================================================
   // LCS
@@ -158,7 +158,7 @@ export const competitions = [
     teams: LCS_TEAMS,
   }),
 
-  createCompetition({
+ /* createCompetition({
     id: "lcs_spring_2026",
     name: "LCS Spring Split 2026",
     league: "LCS",
@@ -180,7 +180,7 @@ export const competitions = [
     endDate: "2026-09-10",
     format: competitionFormats.LCS_2026_SUMMER,
     teams: LCS_TEAMS,
-  }),
+  }),*/
 
   // =====================================================
   // LCK
@@ -198,7 +198,7 @@ export const competitions = [
     teams: LCK_TEAMS,
   }),
 
-  createCompetition({
+  /*createCompetition({
     id: "lck_spring_2026",
     name: "LCK Spring Split 2026",
     league: "LCK",
@@ -220,7 +220,7 @@ export const competitions = [
     endDate: "2026-09-30",
     format: competitionFormats.LCK_2026_SUMMER,
     teams: LCK_TEAMS,
-  }),
+  }), */
 
   // =====================================================
   // LPL
@@ -238,7 +238,7 @@ export const competitions = [
     teams: LPL_TEAMS,
   }),
 
-  createCompetition({
+  /*createCompetition({
     id: "lpl_spring_2026",
     name: "LPL Spring Split 2026",
     league: "LPL",
@@ -260,7 +260,7 @@ export const competitions = [
     endDate: "2026-09-25",
     format: competitionFormats.LPL_2026_SUMMER,
     teams: LPL_TEAMS,
-  }),
+  }),*/
 
   // =====================================================
   // CBLOL
@@ -278,7 +278,7 @@ export const competitions = [
     teams: CBLOL_TEAMS,
   }),
 
-  createCompetition({
+  /*createCompetition({
     id: "cblol_spring_2026",
     name: "CBLOL Spring Split 2026",
     league: "CBLOL",
@@ -300,7 +300,7 @@ export const competitions = [
     endDate: "2026-09-20",
     format: competitionFormats.CBLOL_2026_SUMMER,
     teams: CBLOL_TEAMS,
-  }),
+  }),*/
 
   // =====================================================
   // LCP
@@ -318,7 +318,7 @@ export const competitions = [
     teams: LCP_TEAMS,
   }),
 
-  createCompetition({
+  /*createCompetition({
     id: "lcp_spring_2026",
     name: "LCP Spring Split 2026",
     league: "LCP",
@@ -340,5 +340,5 @@ export const competitions = [
     endDate: "2026-09-15",
     format: competitionFormats.LCP_2026_SUMMER,
     teams: LCP_TEAMS,
-  }),
+  }),*/
 ];
