@@ -6,6 +6,26 @@ import {
   lecWinter2026Schedule
 }
 from "../data/realCalendars/lecWinter2026";
+import {
+  lcsWinter2026Schedule
+}
+from "../data/realCalendars/lcsWinter2026";
+import {
+  lckWinter2026Schedule
+}
+from "../data/realCalendars/lckWinter2026";
+import {
+  lcpWinter2026Schedule 
+}
+  from "../data/realCalendars/lcpWinter2026";
+  import {
+    cblolWinter2026Schedule 
+  }
+  from "../data/realCalendars/cblolWinter2026";
+import {
+  buildSwissStandings
+}
+from "../competition/swiss/buildSwissStandings";
 
 
 import {
@@ -28,6 +48,8 @@ const createCompetition = ({
   format,
   teams,
   realSchedule,
+
+  swissState,
 }) => {
 
   const competition = {
@@ -41,6 +63,8 @@ const createCompetition = ({
     format,
     teams,
    realSchedule,
+
+   swissState,
   };
 
   // ---------------------------------------------------
@@ -70,7 +94,7 @@ const LEC_TEAMS = [
 ];
 
 const LCS_TEAMS = [
-  "tl", "c9", "lyon", "dis", "fly",
+  "tl", "c9", "lyon", "dsg", "fly",
   "sr", "sen", "dig"
 ];
 
@@ -146,17 +170,43 @@ export const competitions = [
   // LCS
   // =====================================================
 
-  createCompetition({
-    id: "lcs_winter_2026",
-    name: "LCS Winter Split 2026",
-    league: "LCS",
-    year: 2026,
-    split: "WINTER",
-    startDate: "2026-01-10",
-    endDate: "2026-03-01",
-    format: competitionFormats.LCS_2026_WINTER,
-    teams: LCS_TEAMS,
-  }),
+createCompetition({
+  id: "lcs_winter_2026",
+  name: "LCS Winter Split 2026",
+  league: "LCS",
+  year: 2026,
+  split: "WINTER",
+  startDate: "2026-01-24",
+  endDate: "2026-03-01",
+
+  format:
+    competitionFormats
+      .LCS_2026_WINTER,
+
+  teams: LCS_TEAMS,
+
+  // ===================================================
+  // REAL RIOT ROUND 1
+  // ===================================================
+
+  realSchedule:
+    lcsWinter2026Schedule,
+
+  // ===================================================
+  // SWISS STATE
+  // ===================================================
+
+  swissState: {
+    currentRound: 1,
+    completed: false,
+    standings:
+      buildSwissStandings(
+        LCS_TEAMS
+      ),
+    qualifiedTeams: [],
+    eliminatedTeams: [],
+  },
+}),
 
  /* createCompetition({
     id: "lcs_spring_2026",
@@ -192,10 +242,17 @@ export const competitions = [
     league: "LCK",
     year: 2026,
     split: "WINTER",
+
     startDate: "2026-01-14",
     endDate: "2026-03-01",
-    format: competitionFormats.LCK_2026_WINTER,
+
+    format:
+      competitionFormats.LCK_2026_WINTER,
+
     teams: LCK_TEAMS,
+
+    realSchedule:
+      lckWinter2026Schedule,
   }),
 
   /*createCompetition({

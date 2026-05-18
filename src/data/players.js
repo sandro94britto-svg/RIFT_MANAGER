@@ -619,7 +619,7 @@ export const players = [
     alias: "Castle",
     role: "TOP",
     rating: 81,
-    teamId: "dis",
+    teamId: "dsg",
     picture: "/players/castle.png",
   },
     {
@@ -629,7 +629,7 @@ export const players = [
     alias: "KryRa",
     role: "JGL",
     rating: 83,
-    teamId: "dis",
+    teamId: "dsg",
     picture: "/players/kryra.png",
   },
     {
@@ -639,7 +639,7 @@ export const players = [
     alias: "CallMe",
     role: "MID",
     rating: 92,
-    teamId: "dis",
+    teamId: "dsg",
     picture: "/players/callme.png",
   },
     {
@@ -649,7 +649,7 @@ export const players = [
     alias: "sajed",
     role: "ADC",
     rating: 88,
-    teamId: "dis",
+    teamId: "dsg",
     picture: "/players/sajed.png",
   },
     {
@@ -659,7 +659,7 @@ export const players = [
     alias: "Lyonz",
     role: "SUP",
     rating: 79,
-    teamId: "dis",
+    teamId: "dsg",
     picture: "/players/lyonz.png",
   },
        // ===== FLYQUEST=====

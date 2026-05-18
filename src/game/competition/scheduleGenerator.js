@@ -2,7 +2,14 @@
 // scheduleGenerator.js
 // =====================================================
 
-import { createMatch }
+import {
+  STAGE_TYPES,
+}
+from "./competitionFormats";
+
+import {
+  createMatch
+}
 from "../matches/createMatch";
 
 // =====================================================
@@ -11,48 +18,65 @@ export function generateCompetitionSchedule(
   competition
 ) {
 
+  const allMatches = [];
+
   // ===================================================
-  // REAL CALENDAR
+  // REAL RIOT SCHEDULE
   // ===================================================
 
   if (
-    competition.realSchedule
+    competition.realSchedule &&
+    competition.realSchedule.length > 0
   ) {
 
-    return competition.realSchedule.map(
-      match =>
+    for (
+      const [index, matchData]
+      of competition.realSchedule.entries()
+    ) {
 
+      const match =
         createMatch({
+
+          id:
+            `${competition.id}_real_${index}`,
 
           competitionId:
             competition.id,
 
           stageType:
-            "REGULAR_SEASON",
+            STAGE_TYPES.REGULAR_SEASON,
 
-          round: 1,
+          round:
+            matchData.round || 1,
 
           scheduledDate:
-            match.date,
+            matchData.date,
 
           homeTeamId:
-            match.homeTeamId,
+            matchData.homeTeamId,
 
           awayTeamId:
-            match.awayTeamId,
+            matchData.awayTeamId,
 
           bestOf:
-            match.bestOf,
+            matchData.bestOf || 1,
 
           fearlessDraft:
-            false,
-        })
-    );
+            true,
+        });
+
+      allMatches.push(match);
+    }
   }
 
   // ===================================================
-  // FUTURE PROCEDURAL GENERATION
+  // DEBUG
   // ===================================================
 
-  return [];
+  console.log(
+    competition.id,
+    allMatches.length
+  );
+
+  return allMatches;
 }

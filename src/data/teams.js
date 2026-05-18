@@ -176,11 +176,11 @@ export const teams = [
     isVisible: true,
   },
       {
-    id: "dis",
+    id: "dsg",
     shortname: "DSG",
     name: "Disguised",
     fullname: "Disguised",
-    logo: "/teams/na/dis.png",
+    logo: "/teams/na/dsg.png",
     regionId: "na",
         isPlayable : false,
     isVisible: true,
@@ -278,7 +278,7 @@ export const teams = [
   },
     {
     id: "bnk",
-    shortname: "BFK",
+    shortname: "BFX",
     name: "BNK FEARX",
     fullname: "BNK FEARX",
     logo: "/teams/kr/bnk.png",

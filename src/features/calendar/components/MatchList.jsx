@@ -10,15 +10,15 @@ export default function MatchList({
     <div className="
       bg-white/5
       rounded-xl
-      p-4
+      p-1
       h-full
       overflow-y-auto
     ">
 
       <h2 className="
-        text-lg
+        text-md
         font-semibold
-        mb-4
+        mb-2
       ">
         Calendar
       </h2>
