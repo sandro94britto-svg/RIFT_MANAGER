@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import LoadGame from "./pages/LoadGame";
 import NewManager from "./pages/NewManager";
 
+import  TeamPage from "./pages/TeamPage";
+
 export default function App() {
   return (
     <Routes>
@@ -15,6 +17,8 @@ export default function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/load-game" element={<LoadGame />} />
       <Route path="/new-manager" element={<NewManager />} />
+
+      <Route path="/team/:teamId" element={<TeamPage />}/>
     </Routes>
   );
 }

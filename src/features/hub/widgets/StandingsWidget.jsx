@@ -1,6 +1,7 @@
 import { useGame } from "../../../context/GameContext";
 import { generateStandings } from "../../../game/world/standings";
 import { teams } from "../../../data/teams";
+import { Link } from "react-router-dom";
 
 export default function StandingsWidget() {
 
@@ -120,9 +121,13 @@ const getTeamData = (teamId) => {
                         alt={teamData?.name}
                         className="w-5 h-5 object-contain"
                     />
-                    <span className="truncate">
+
+                    <Link
+                        to={`/team/${team.id}`}
+                        className="truncate"
+                    >
                      {teamData?.name || team.teamId}
-                    </span>
+                    </Link>
                     <span className="ml-auto">
                       {team.wins}-{team.losses}
                     </span>
