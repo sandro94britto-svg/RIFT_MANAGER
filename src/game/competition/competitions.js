@@ -1,7 +1,6 @@
 // =====================================================
 // competitions.js (WORLD LAYER - V2)
 // =====================================================
-import { generateCompetitionSchedule } from "./scheduleGenerator";
 import {
   lecWinter2026Schedule
 }
@@ -23,65 +22,19 @@ import {
   }
   from "../data/realCalendars/cblolWinter2026";
 import {
+  lplWinter2026Schedule 
+}
+from "../data/realCalendars/lplWinter2026";
+
+import {
   buildSwissStandings
 }
 from "../competition/swiss/buildSwissStandings";
-
 
 import {
   competitionFormats,
   STAGE_TYPES
 } from "./competitionFormats";
-
-// -----------------------------------------------------
-// HELPERS
-// -----------------------------------------------------
-
-const createCompetition = ({
-  id,
-  name,
-  league,
-  year,
-  split,
-  startDate,
-  endDate,
-  format,
-  teams,
-  realSchedule,
-
-  swissState,
-}) => {
-
-  const competition = {
-    id,
-    name,
-    league,
-    year,
-    split,
-    startDate,
-    endDate,
-    format,
-    teams,
-   realSchedule,
-
-   swissState,
-  };
-
-  // ---------------------------------------------------
-  // GENERATE SCHEDULE
-  // ---------------------------------------------------
-
-  competition.matches =
-    generateCompetitionSchedule(
-      competition
-    );
-console.log(
-  competition.id,
-  competition.matches.length
-);
-
-  return competition;
-};
 
 // -----------------------------------------------------
 // TEAMS (PLACEHOLDER IDS ONLY)
@@ -129,7 +82,7 @@ export const competitions = [
   // LEC
   // =====================================================
 
-  createCompetition({
+  {
     id: "lec_winter_2026",
     name: "LEC Winter Split 2026",
     league: "LEC",
@@ -140,7 +93,7 @@ export const competitions = [
     format: competitionFormats.LEC_2026_WINTER,
     teams: LEC_TEAMS,
     realSchedule: lecWinter2026Schedule,
-  }),
+  },
 
   /*createCompetition({
     id: "lec_spring_2026",
@@ -170,7 +123,7 @@ export const competitions = [
   // LCS
   // =====================================================
 
-createCompetition({
+{
   id: "lcs_winter_2026",
   name: "LCS Winter Split 2026",
   league: "LCS",
@@ -206,7 +159,7 @@ createCompetition({
     qualifiedTeams: [],
     eliminatedTeams: [],
   },
-}),
+},
 
  /* createCompetition({
     id: "lcs_spring_2026",
@@ -236,7 +189,7 @@ createCompetition({
   // LCK
   // =====================================================
 
-  createCompetition({
+  {
     id: "lck_winter_2026",
     name: "LCK Winter Split 2026",
     league: "LCK",
@@ -253,7 +206,7 @@ createCompetition({
 
     realSchedule:
       lckWinter2026Schedule,
-  }),
+  },
 
   /*createCompetition({
     id: "lck_spring_2026",
@@ -283,17 +236,48 @@ createCompetition({
   // LPL
   // =====================================================
 
-  createCompetition({
-    id: "lpl_winter_2026",
-    name: "LPL Winter Split 2026",
-    league: "LPL",
-    year: 2026,
-    split: "WINTER",
-    startDate: "2026-01-05",
-    endDate: "2026-03-10",
-    format: competitionFormats.LPL_2026_WINTER,
-    teams: LPL_TEAMS,
-  }),
+{
+  id: "lpl_winter_2026",
+  name: "LPL Winter Split 2026",
+  league: "LPL",
+  year: 2026,
+  split: "WINTER",
+  startDate: "2026-01-14",
+  endDate: "2026-03-10",
+  format:
+    competitionFormats
+      .LPL_2026_WINTER,
+  teams: LPL_TEAMS,
+  realSchedule:
+    lplWinter2026Schedule,
+  groups: {
+    ASCEND: [
+      "al",
+      "blg",
+      "wei",
+      "jdg",
+      "tes",
+      "ig",
+    ],
+    PERSEVERANCE: [
+      "nip",
+      "we",
+      "edg",
+      "ttg",
+    ],
+    NIRVANA: [
+      "up",
+      "omg",
+      "lng",
+      "lgd",
+    ],
+  },
+  standings: {
+    ASCEND: [],
+    PERSEVERANCE: [],
+    NIRVANA: [],
+  },
+},
 
   /*createCompetition({
     id: "lpl_spring_2026",
@@ -323,7 +307,7 @@ createCompetition({
   // CBLOL
   // =====================================================
 
-  createCompetition({
+  {
     id: "cblol_winter_2026",
     name: "CBLOL Winter Split 2026",
     league: "CBLOL",
@@ -333,7 +317,9 @@ createCompetition({
     endDate: "2026-03-05",
     format: competitionFormats.CBLOL_2026_WINTER,
     teams: CBLOL_TEAMS,
-  }),
+    realSchedule:
+      cblolWinter2026Schedule,
+  },
 
   /*createCompetition({
     id: "cblol_spring_2026",
@@ -363,7 +349,7 @@ createCompetition({
   // LCP
   // =====================================================
 
-  createCompetition({
+  {
     id: "lcp_winter_2026",
     name: "LCP Winter Split 2026",
     league: "LCP",
@@ -373,7 +359,9 @@ createCompetition({
     endDate: "2026-03-01",
     format: competitionFormats.LCP_2026_WINTER,
     teams: LCP_TEAMS,
-  }),
+    realSchedule:
+      lcpWinter2026Schedule,
+  },
 
   /*createCompetition({
     id: "lcp_spring_2026",

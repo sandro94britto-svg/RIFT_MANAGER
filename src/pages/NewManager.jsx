@@ -15,8 +15,6 @@ export default function CreateManager() {
   const [lastName, setLastName] = useState("");
   const [nickname, setNickname] = useState("");
   const [avatar, setAvatar] = useState(null);
-  const world = initializeWorld();
-
 
   if (!selectedTeam) {
     return (
@@ -96,6 +94,7 @@ export default function CreateManager() {
             disabled={!firstName || !lastName || !nickname}
             onClick={() => {
 
+              const world = initializeWorld();
               const newSave = {
                 selectedTeam,
 

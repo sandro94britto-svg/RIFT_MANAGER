@@ -86,14 +86,7 @@ export const LEC_2026_WINTER = {
       format: FORMAT_TYPES.SINGLE_ROUND_ROBIN,
       matchRules: MATCH_RULES.BO1,
       draftRules: DRAFT_RULES.STANDARD,
-      realCalendar: true,
       teamsQualified: 8,
-      calendarRules: {
-        totalWeeks: 4,
-        allowedDays: [6, 0, 1],
-        matchesPerDay: 6,
-        matchesPerWeek: 18,
-      }
     }),
     stage({
       id: "LEC_WINTER_PLAYOFFS",
@@ -123,6 +116,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M1",
+          date: "2026-02-16",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_QUARTERFINAL",
           bestOf: 3,
@@ -137,6 +133,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M2",
+          date: "2026-02-16",
+          time: "19:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_QUARTERFINAL",
           bestOf: 3,
@@ -151,6 +150,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M3",
+          date: "2026-02-17",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_QUARTERFINAL",
           bestOf: 3,
@@ -165,6 +167,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M4",
+          date: "2026-02-17",
+          time: "19:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_QUARTERFINAL",
           bestOf: 3,
@@ -182,6 +187,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M5",
+          date: "2026-02-20",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_SEMIFINAL",
           bestOf: 3,
@@ -196,6 +204,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M6",
+          date: "2026-02-20",
+          time: "19:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_SEMIFINAL",
           bestOf: 3,
@@ -213,6 +224,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M7",
+          date: "2026-02-21",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_ROUND_1",
           bestOf: 3,
@@ -227,6 +241,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M8",
+          date: "2026-02-21",
+          time: "19:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_ROUND_1",
           bestOf: 3,
@@ -244,6 +261,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M9",
+          date: "2026-02-22",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_ROUND_2",
           bestOf: 3,
@@ -256,6 +276,9 @@ export const LEC_2026_WINTER = {
         },
         {
           id: "M10",
+          date: "2026-02-22",
+          time: "19:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_ROUND_2",
           bestOf: 3,
@@ -271,6 +294,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M11",
+          date: "2026-02-23",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "UPPER_FINAL",
           bestOf: 5,
@@ -286,6 +312,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M12",
+          date: "2026-02-27",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_ROUND_3",
           bestOf: 5,
@@ -301,6 +330,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M13",
+          date: "2026-02-28",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "LOWER_FINAL",
           bestOf: 5,
@@ -316,6 +348,9 @@ export const LEC_2026_WINTER = {
         // =================================================
         {
           id: "M14",
+          date: "2026-03-01",
+          time: "17:00",
+          timezone: "Europe/Berlin",
           round:
             "GRAND_FINAL",
           bestOf: 5,
@@ -395,12 +430,6 @@ export const LCS_2026_WINTER = {
       format: FORMAT_TYPES.SWISS,
       matchRules: MATCH_RULES.BO3,
       draftRules: DRAFT_RULES.FEARLESS,
-      calendarRules: {
-        totalWeeks: 3,
-        allowedDays: [6, 0],
-        matchesPerDay: 2,
-        matchesPerWeek: 5,
-      }
     }),
 stage({
   id: "LCS_WINTER_PLAYOFFS",
@@ -426,6 +455,9 @@ stage({
     // ============================================
     {
       id: "M1",
+      date: "2026-02-14",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "UPPER_SEMIFINAL",
       sideA:
@@ -438,6 +470,9 @@ stage({
     },
     {
       id: "M2",
+      date: "2026-02-15",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "UPPER_SEMIFINAL",
       sideA:
@@ -453,6 +488,9 @@ stage({
     // ============================================
     {
       id: "M3",
+      date: "2026-02-20",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "UPPER_FINAL",
       sideA:
@@ -468,6 +506,9 @@ stage({
     // ============================================
     {
       id: "M4",
+      date: "2026-02-21",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "LOWER_ROUND_1",
       sideA:
@@ -479,7 +520,10 @@ stage({
       winnerTo: "M6",
     },
     {
-      id: "M5",
+      id: "M5",      
+      date: "2026-02-12",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "LOWER_ROUND_1",
       sideA:
@@ -495,6 +539,9 @@ stage({
     // ============================================
     {
       id: "M6",
+      date: "2026-02-27",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "LOWER_SEMIFINAL",
       sideA:
@@ -509,6 +556,9 @@ stage({
     // ============================================
     {
       id: "M7",
+      date: "2026-02-28",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "LOWER_FINAL",
       sideA:
@@ -523,6 +573,9 @@ stage({
     // ============================================
     {
       id: "M8",
+      date: "2026-03-01",
+      time: "13:00",
+      timezone: "America/Los_Angeles",
       round:
         "GRAND_FINAL",
       sideA:
@@ -632,15 +685,7 @@ export const LCK_2026_WINTER = {
       matchRules:
         MATCH_RULES.BO3,
       draftRules:
-        DRAFT_RULES.STANDARD,
-      calendarRules: {
-        totalWeeks: 2,
-        allowedDays: [
-          3,4,5,6,0
-        ],
-        matchesPerDay: 2,
-        matchesPerWeek: 12,
-      },
+        DRAFT_RULES.FEARLESS,
     }),
     // ===============================================
     // WEEK 3
@@ -665,355 +710,392 @@ export const LCK_2026_WINTER = {
         MATCH_RULES.BO5,
       draftRules:
         DRAFT_RULES.FEARLESS,
-      calendarRules: {
-        totalWeeks: 1,
-        allowedDays: [
-          3,4,5,6,0
-        ],
-        matchesPerDay: 1,
-        matchesPerWeek: 6,
-      },
     }),
     // ===============================================
     // PLAY-IN
     // ===============================================
-stage({
-id: "PLAY_IN",
-type:
-STAGE_TYPES.PLAY_IN,
-format:
-FORMAT_TYPES.DOUBLE_ELIMINATION,
-qualifiedTeams: 3,
-eliminatedTeams: 3,
-matchRules:
-MATCH_RULES.BO5,
-draftRules:
-DRAFT_RULES.FEARLESS,
-qualificationRules: {
-// ============================================
-// DIRECT PLAYOFF QUALIFICATION
-// ============================================
-directQualified: [
-  "WINNER_GROUP_SEED_1",
-  "WINNER_GROUP_SEED_2",
-  "LOSER_GROUP_SEED_1",
-],
+    stage({
+    id: "PLAY_IN",
+    type:
+    STAGE_TYPES.PLAY_IN,
+    format:
+    FORMAT_TYPES.DOUBLE_ELIMINATION,
+    qualifiedTeams: 3,
+    eliminatedTeams: 3,
+    matchRules:
+    MATCH_RULES.BO5,
+    draftRules:
+    DRAFT_RULES.FEARLESS,
+    qualificationRules: {
+    // ============================================
+    // DIRECT PLAYOFF QUALIFICATION
+    // ============================================
+    directQualified: [
+      "WINNER_GROUP_SEED_1",
+      "WINNER_GROUP_SEED_2",
+      "LOSER_GROUP_SEED_1",
+    ],
 
-// ============================================
-// DIRECT ELIMINATION
-// ============================================
-directEliminated: [
-  "LOSER_GROUP_SEED_5",
-],
-// ============================================
-// PLAY-IN PARTICIPANTS
-// ============================================
-playInTeams: [
-  "WINNER_GROUP_SEED_3",
-  "WINNER_GROUP_SEED_4",
-  "WINNER_GROUP_SEED_5",
+    // ============================================
+    // DIRECT ELIMINATION
+    // ============================================
+    directEliminated: [
+      "LOSER_GROUP_SEED_5",
+    ],
+    // ============================================
+    // PLAY-IN PARTICIPANTS
+    // ============================================
+    playInTeams: [
+      "WINNER_GROUP_SEED_3",
+      "WINNER_GROUP_SEED_4",
+      "WINNER_GROUP_SEED_5",
 
-  "LOSER_GROUP_SEED_2",
-  "LOSER_GROUP_SEED_3",
-  "LOSER_GROUP_SEED_4",
-],
-// ============================================
-// PLAY-IN SEEDING RULES
-// ============================================
-seedingRules: [
-  "BEST_BO_SCORE",
-  "GAME_DIFFERENTIAL",
-],
-},
-bracket: [
-// ============================================
-// ROUND 1
-// ============================================
-{
-  id: "M1",
-  round:
-    "PLAY_IN_ROUND_1",
-  sideA:
-    "PLAY_IN_SEED_3",
-  sideB:
-    "PLAY_IN_SEED_6",
-  bestOf: 3,
-  winnerTo:
-    "M3",
-  eliminationMatch:
-    false,
-},
-{
-  id: "M2",
-  round:
-    "PLAY_IN_ROUND_1",
-  sideA:
-    "PLAY_IN_SEED_4",
-  sideB:
-    "PLAY_IN_SEED_5",
-  bestOf: 3,
-  winnerTo:
-    "M4",
-  eliminationMatch:
-    false,
-},
-// ============================================
-// ROUND 2
-// ============================================
-{
-  id: "M3",
-  round:
-    "PLAY_IN_ROUND_2",
-  sideA:
-    "PLAY_IN_SEED_1",
-  sideB:
-    "WINNER_M1",
-  bestOf: 3,
-  qualificationMatch:
-    true,
-  winnerQualified:
-    true,
-  loserTo:
-    "M5",
-},
-{
-  id: "M4",
-  round:
-    "PLAY_IN_ROUND_2",
-  sideA:
-    "PLAY_IN_SEED_2",
-  sideB:
-    "WINNER_M2",
-  bestOf: 3,
-  qualificationMatch:
-    true,
-  winnerQualified:
-    true,
-  loserTo:
-    "M5",
-},
-// ============================================
-// LAST CHANCE
-// ============================================
-{
-  id: "M5",
-  round:
-    "PLAY_IN_LAST_CHANCE",
-  sideA:
-    "LOSER_M3",
-  sideB:
-    "LOSER_M4",
-  bestOf: 5,
-  qualificationMatch:
-    true,
-  eliminationMatch:
-    true,
-  winnerQualified:
-    true,
-},
-],
-}),
-    // ===============================================
-    // PLAYOFFS
-    // ===============================================
-stage({
-id: "PLAYOFFS",
-type:
-STAGE_TYPES.PLAYOFFS,
-format:
-FORMAT_TYPES.DOUBLE_ELIMINATION,
-matchRules:
-MATCH_RULES.BO5,
-draftRules:
-DRAFT_RULES.FEARLESS,
-qualification: {
-    firstStand: {
-      qualifiedTeams: 1,
-
-      source:
-        "PLAYOFF_CHAMPION",
+      "LOSER_GROUP_SEED_2",
+      "LOSER_GROUP_SEED_3",
+      "LOSER_GROUP_SEED_4",
+    ],
+    // ============================================
+    // PLAY-IN SEEDING RULES
+    // ============================================
+    seedingRules: [
+      "BEST_BO_SCORE",
+      "GAME_DIFFERENTIAL",
+    ],
     },
-  },
-qualificationRules: {
-// ============================================
-// DIRECT QUALIFICATION
-// ============================================
-fromWinnerGroup: [
-  1,
-  2,
-],
-fromLoserGroup: [
-  1,
-],
-fromPlayIn: 3,
-},
-bracket: [
-// ============================================
-// ROUND 1
-// ============================================
-{
-  id: "M1",
-  round:
-    "ROUND_1",
-  sideA:
-    "LOSER_GROUP_SEED_1",
-  sideB:
-    "LG1_CHOSEN_PLAYIN_TEAM",
-  bestOf: 5,
-  winnerTo:
-    "M4",
-  loserTo:
-    "M3",
-},
+    bracket: [
+    // ============================================
+    // ROUND 1
+    // ============================================
+    {
+      id: "M1",
+      date: "2026-02-06",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "PLAY_IN_ROUND_1",
+      sideA:
+        "PLAY_IN_SEED_3",
+      sideB:
+        "PLAY_IN_SEED_6",
+      bestOf: 3,
+      winnerTo:
+        "M3",
+      eliminationMatch:
+        false,
+    },
+    {
+      id: "M2",
+      date: "2026-02-06",
+      time: "19:00",
+      timezone: "Asia/Seoul",
+      round:
+        "PLAY_IN_ROUND_1",
+      sideA:
+        "PLAY_IN_SEED_4",
+      sideB:
+        "PLAY_IN_SEED_5",
+      bestOf: 3,
+      winnerTo:
+        "M4",
+      eliminationMatch:
+        false,
+    },
+    // ============================================
+    // ROUND 2
+    // ============================================
+    {
+      id: "M3",
+      date: "2026-02-07",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "PLAY_IN_ROUND_2",
+      sideA:
+        "PLAY_IN_SEED_1",
+      sideB:
+        "WINNER_M1",
+      bestOf: 3,
+      qualificationMatch:
+        true,
+      winnerQualified:
+        true,
+      loserTo:
+        "M5",
+    },
+    {
+      id: "M4",
+      date: "2026-02-07",
+      time: "19:00",
+      timezone: "Asia/Seoul",
+      round:
+        "PLAY_IN_ROUND_2",
+      sideA:
+        "PLAY_IN_SEED_2",
+      sideB:
+        "WINNER_M2",
+      bestOf: 3,
+      qualificationMatch:
+        true,
+      winnerQualified:
+        true,
+      loserTo:
+        "M5",
+    },
+    // ============================================
+    // LAST CHANCE
+    // ============================================
+    {
+      id: "M5",
+      date: "2026-02-08",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "PLAY_IN_LAST_CHANCE",
+      sideA:
+        "LOSER_M3",
+      sideB:
+        "LOSER_M4",
+      bestOf: 5,
+      qualificationMatch:
+        true,
+      eliminationMatch:
+        true,
+      winnerQualified:
+        true,
+    },
+    ],
+    }),
+        // ===============================================
+        // PLAYOFFS
+        // ===============================================
+    stage({
+    id: "PLAYOFFS",
+    type:
+    STAGE_TYPES.PLAYOFFS,
+    format:
+    FORMAT_TYPES.DOUBLE_ELIMINATION,
+    matchRules:
+    MATCH_RULES.BO5,
+    draftRules:
+    DRAFT_RULES.FEARLESS,
+    qualification: {
+        firstStand: {
+          qualifiedTeams: 1,
 
-{
-  id: "M2",
-  round:
-    "ROUND_1",
-  sideA:
-    "REMAINING_PLAYIN_TEAM_A",
-  sideB:
-    "REMAINING_PLAYIN_TEAM_B",
-  bestOf: 5,
-  winnerTo:
-    "M5",
-  loserTo:
-    "M3",
-},
-// ============================================
-// LOWER ROUND 1
-// ============================================
-{
-  id: "M3",
-  round:
-    "LOWER_ROUND_1",
-  sideA:
-    "LOSER_M1",
-  sideB:
-    "LOSER_M2",
-  bestOf: 5,
-  eliminationMatch:
-    true,
-  winnerTo:
-    "M6",
-},
-// ============================================
-// ROUND 2
-// ============================================
-{
-  id: "M4",
-  round:
-    "ROUND_2",
-  sideA:
-    "WINNER_GROUP_SEED_1",
-  sideB:
-    "WG1_CHOSEN_ROUND1_WINNER",
-  bestOf: 5,
-  winnerTo:
-    "M8",
-  loserTo:
-    "M6",
-},
-{
-  id: "M5",
-  round:
-    "ROUND_2",
-  sideA:
-    "WINNER_GROUP_SEED_2",
-  sideB:
-    "REMAINING_ROUND1_WINNER",
-  bestOf: 5,
-  winnerTo:
-    "M8",
-  loserTo:
-    "M7",
-},
-// ============================================
-// LOWER ROUND 2
-// ============================================
-{
-  id: "M6",
-  round:
-    "LOWER_ROUND_2",
-  sideA:
-    "LOSER_M4",
-  sideB:
-    "WINNER_M3",
-  bestOf: 5,
-  eliminationMatch:
-    true,
-  winnerTo:
-    "M7",
-},
-// ============================================
-// LOWER ROUND 3
-// ============================================
-{
-  id: "M7",
-  round:
-    "LOWER_ROUND_3",
-  sideA:
-    "LOSER_M5",
-  sideB:
-    "WINNER_M6",
-  bestOf: 5,
-  eliminationMatch:
-    true,
-  winnerTo:
-    "M9",
-},
-// ============================================
-// UPPER FINAL
-// ============================================
-{
-  id: "M8",
-  round:
-    "UPPER_FINAL",
-  sideA:
-    "WINNER_M4",
-  sideB:
-    "WINNER_M5",
-  bestOf: 5,
-  winnerTo:
-    "M10",
-  loserTo:
-    "M9",
-},
-// ============================================
-// LOWER FINAL
-// ============================================
-{
-  id: "M9",
-  round:
-    "LOWER_FINAL",
-  sideA:
-    "LOSER_M8",
-  sideB:
-    "WINNER_M7",
-  bestOf: 5,
-  eliminationMatch:
-    true,
-  winnerTo:
-    "M10",
-},
-// ============================================
-// GRAND FINAL
-// ============================================
-{
-  id: "M10",
-  round:
-    "GRAND_FINAL",
-  sideA:
-    "WINNER_M8",
-  sideB:
-    "WINNER_M9",
-  bestOf: 5,
-  championshipMatch:
-    true,
-},
-],
-}),
-],
+          source:
+            "PLAYOFF_CHAMPION",
+        },
+      },
+    qualificationRules: {
+    // ============================================
+    // DIRECT QUALIFICATION
+    // ============================================
+    fromWinnerGroup: [
+      1,
+      2,
+    ],
+    fromLoserGroup: [
+      1,
+    ],
+    fromPlayIn: 3,
+    },
+    bracket: [
+    // ============================================
+    // ROUND 1
+    // ============================================
+    {
+      id: "M1",
+      date: "2026-02-12",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "ROUND_1",
+      sideA:
+        "LOSER_GROUP_SEED_1",
+      sideB:
+        "LG1_CHOSEN_PLAYIN_TEAM",
+      bestOf: 5,
+      winnerTo:
+        "M4",
+      loserTo:
+        "M3",
+    },
+
+    {
+      id: "M2",
+      date: "2026-02-13",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "ROUND_1",
+      sideA:
+        "REMAINING_PLAYIN_TEAM_A",
+      sideB:
+        "REMAINING_PLAYIN_TEAM_B",
+      bestOf: 5,
+      winnerTo:
+        "M5",
+      loserTo:
+        "M3",
+    },
+    // ============================================
+    // LOWER ROUND 1
+    // ============================================
+    {
+      id: "M3",
+      date: "2026-02-14",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "LOWER_ROUND_1",
+      sideA:
+        "LOSER_M1",
+      sideB:
+        "LOSER_M2",
+      bestOf: 5,
+      eliminationMatch:
+        true,
+      winnerTo:
+        "M6",
+    },
+    // ============================================
+    // ROUND 2
+    // ============================================
+    {
+      id: "M4",
+      date: "2026-02-15",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "ROUND_2",
+      sideA:
+        "WINNER_GROUP_SEED_1",
+      sideB:
+        "WG1_CHOSEN_ROUND1_WINNER",
+      bestOf: 5,
+      winnerTo:
+        "M8",
+      loserTo:
+        "M6",
+    },
+    {
+      id: "M5",
+      date: "2026-02-19",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "ROUND_2",
+      sideA:
+        "WINNER_GROUP_SEED_2",
+      sideB:
+        "REMAINING_ROUND1_WINNER",
+      bestOf: 5,
+      winnerTo:
+        "M8",
+      loserTo:
+        "M7",
+    },
+    // ============================================
+    // LOWER ROUND 2
+    // ============================================
+    {
+      id: "M6",
+      date: "2026-02-20",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "LOWER_ROUND_2",
+      sideA:
+        "LOSER_M4",
+      sideB:
+        "WINNER_M3",
+      bestOf: 5,
+      eliminationMatch:
+        true,
+      winnerTo:
+        "M7",
+    },
+    // ============================================
+    // LOWER ROUND 3
+    // ============================================
+    {
+      id: "M7",
+      date: "2026-02-21",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "LOWER_ROUND_3",
+      sideA:
+        "LOSER_M5",
+      sideB:
+        "WINNER_M6",
+      bestOf: 5,
+      eliminationMatch:
+        true,
+      winnerTo:
+        "M9",
+    },
+    // ============================================
+    // UPPER FINAL
+    // ============================================
+    {
+      id: "M8",
+      date: "2026-02-22",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "UPPER_FINAL",
+      sideA:
+        "WINNER_M4",
+      sideB:
+        "WINNER_M5",
+      bestOf: 5,
+      winnerTo:
+        "M10",
+      loserTo:
+        "M9",
+    },
+    // ============================================
+    // LOWER FINAL
+    // ============================================
+    {
+      id: "M9",
+      date: "2026-02-28",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "LOWER_FINAL",
+      sideA:
+        "LOSER_M8",
+      sideB:
+        "WINNER_M7",
+      bestOf: 5,
+      eliminationMatch:
+        true,
+      winnerTo:
+        "M10",
+    },
+    // ============================================
+    // GRAND FINAL
+    // ============================================
+    {
+      id: "M10",
+      date: "2026-03-01",
+      time: "17:00",
+      timezone: "Asia/Seoul",
+      round:
+        "GRAND_FINAL",
+      sideA:
+        "WINNER_M8",
+      sideB:
+        "WINNER_M9",
+      bestOf: 5,
+      championshipMatch:
+        true,
+    },
+  ],
+  }),
+  ],
 };
 
 /* export const LCK_2026_SPRING = {
@@ -1056,21 +1138,450 @@ export const LCK_2026_SUMMER = {
 
 export const LPL_2026_WINTER = {
   stages: [
+    // =================================================
+    // GROUP STAGE
+    // =================================================
     stage({
-      type: STAGE_TYPES.REGULAR_SEASON,
-      format: FORMAT_TYPES.GROUPS,
-      matchRules: MATCH_RULES.BO3,
-      draftRules: DRAFT_RULES.FEARLESS,
-      notes: "Ascend / Perseverance / Nirvana system",
+      id: "GROUP_STAGE",
+      type:
+        STAGE_TYPES.REGULAR_SEASON,
+      format:
+        FORMAT_TYPES.GROUPS,
+      matchRules:
+        MATCH_RULES.BO3,
+      draftRules:
+        DRAFT_RULES.FEARLESS,
+      groups: {
+        ASCEND: {
+          teams: 6,
+          doubleRoundRobin: true,
+        },
+        PERSEVERANCE: {
+          teams: 4,
+          doubleRoundRobin: true,
+        },
+        NIRVANA: {
+          teams: 4,
+          doubleRoundRobin: true,
+        },
+      },
+      tiebreakers: [
+        "SERIES_WINS",
+        "GAME_DIFFERENCE",
+        "HEAD_TO_HEAD_SERIES",
+        "HEAD_TO_HEAD_GAMES",
+        "BO3_TIEBREAKER",
+      ],
+      advancement: {
+        knockoutStage: {
+          ASCEND: [1,2,3,4],
+        },
+        knightsRivalsRound1: {
+          ASCEND: [5,6],
+          PERSEVERANCE: [1,2],
+        },
+        knightsRivalsRound2: {
+          PERSEVERANCE: [3,4],
+          NIRVANA: [1,2],
+        },
+        eliminated: {
+          NIRVANA: [3,4],
+        },
+      },
     }),
+    // =================================================
+    // KNIGHTS RIVALS
+    // =================================================
     stage({
-      type: STAGE_TYPES.KNOCKOUT,
-      format: FORMAT_TYPES.DOUBLE_ELIMINATION,
-      matchRules: MATCH_RULES.BO5,
-      draftRules: DRAFT_RULES.FEARLESS,
+      id: "KNIGHTS_RIVALS",
+      type:
+        STAGE_TYPES.PLAY_IN,
+      format:
+        FORMAT_TYPES.HYBRID_ELIMINATION,
+      matchRules:
+        MATCH_RULES.BO5,
+      draftRules:
+        DRAFT_RULES.FEARLESS,
+      qualifiedTeams: 4,
+      bracket: [
+        // =============================================
+        // ROUND 1
+        // =============================================
+        {
+          id: "KR1",
+          date: "2026-02-09",
+          time: "15:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_1",
+          sideA:
+            "ASCEND_SEED_5",
+          sideB:
+            "PERSEVERANCE_SEED_2",
+          bestOf: 5,
+          winnerQualifies:
+            true,
+          loserTo:
+            "KR5",
+        },
+        {
+          id: "KR2",
+          date: "2026-02-09",
+          time: "19:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_1",
+          sideA:
+            "ASCEND_SEED_6",
+          sideB:
+            "PERSEVERANCE_SEED_1",
+          bestOf: 5,
+          winnerQualifies:
+            true,
+          loserTo:
+            "KR6",
+        },
+        // =============================================
+        // ROUND 2
+        // =============================================
+        {
+          id: "KR3",
+          date: "2026-02-10",
+          time: "15:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_2",
+          sideA:
+            "PERSEVERANCE_SEED_3",
+          sideB:
+            "NIRVANA_SEED_2",
+          bestOf: 5,
+          loserEliminated:
+            true,
+          winnerTo:
+            "KR5",
+        },
+        {
+          id: "KR4",
+          date: "2026-02-10",
+          time: "15:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_2",
+          sideA:
+            "PERSEVERANCE_SEED_4",
+          sideB:
+            "NIRVANA_SEED_1",
+          bestOf: 5,
+          loserEliminated:
+            true,
+          winnerTo:
+            "KR6",
+        },
+        // =============================================
+        // ROUND 3
+        // =============================================
+        {
+          id: "KR5",
+          date: "2026-02-11",
+          time: "15:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_3",
+          sideA:
+            "LOSER_KR2",
+          sideB:
+            "WINNER_KR3",
+          bestOf: 5,
+          winnerQualifies:
+            true,
+          loserEliminated:
+            true,
+        },
+        {
+          id: "KR6",
+          date: "2026-02-11",
+          time: "15:00",
+          timezone: "Asia/Beijing",
+          round:
+            "ROUND_3",
+          sideA:
+            "LOSER_KR1",
+          sideB:
+            "WINNER_KR4",
+          bestOf: 5,
+          winnerQualifies:
+            true,
+          loserEliminated:
+            true,
+        },
+      ],
     }),
+
+// =================================================
+// KNOCKOUT STAGE
+// =================================================
+stage({
+  id: "KNOCKOUT_STAGE",
+  type:
+    STAGE_TYPES.PLAYOFFS,
+  format:
+    FORMAT_TYPES.DOUBLE_ELIMINATION,
+  matchRules:
+    MATCH_RULES.BO5,
+  draftRules:
+    DRAFT_RULES.FEARLESS,
+  qualification: {
+    firstStand: {
+      qualifiedTeams: 1,
+      source:
+        "PLAYOFF_CHAMPION",
+    },
+  },
+  notes:
+    "Ascend seeds choose opponents in order",
+  bracket: [
+    // =============================================
+    // UPPER BRACKET QUARTERFINALS
+    // =============================================
+    {
+      id: "M1",
+      date: "2026-02-24",
+      time: "15:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_QUARTERFINAL",
+      sideA:
+        "ASCEND_SEED_4",
+      sideB:
+        "ASCEND_SEED_4_CHOICE",
+      bestOf: 5,
+      winnerTo: "M7",
+      loserTo: "M5",
+    },
+    {
+      id: "M2",
+      date: "2026-02-24",
+      time: "18:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_QUARTERFINAL",
+      sideA:
+        "ASCEND_SEED_1",
+      sideB:
+        "ASCEND_SEED_1_CHOICE",
+      bestOf: 5,
+      winnerTo: "M7",
+      loserTo: "M5",
+    },
+    {
+      id: "M3",
+      date: "2026-02-25",
+      time: "15:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_QUARTERFINAL",
+      sideA:
+        "ASCEND_SEED_3",
+      sideB:
+        "ASCEND_SEED_3_CHOICE",
+      bestOf: 5,
+      winnerTo: "M8",
+      loserTo: "M6",
+    },
+    {
+      id: "M4",
+      date: "2026-02-25",
+      time: "18:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_QUARTERFINAL",
+      sideA:
+        "ASCEND_SEED_2",
+      sideB:
+        "REMAINING_KNIGHTS_RIVALS_TEAM",
+      bestOf: 5,
+      winnerTo: "M8",
+      loserTo: "M6",
+    },
+    // =============================================
+    // LOWER BRACKET ROUND 1
+    // =============================================
+
+    {
+      id: "M5",
+      date: "2026-02-28",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_ROUND_1",
+      sideA:
+        "LOSER_M1",
+      sideB:
+        "LOSER_M2",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M10",
+    },
+    {
+      id: "M6",
+      date: "2026-03-01",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_ROUND_1",
+      sideA:
+        "LOSER_M3",
+      sideB:
+        "LOSER_M4",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M9",
+    },
+
+    // =============================================
+    // UPPER BRACKET SEMIFINALS
+    // =============================================
+
+    {
+      id: "M7",
+      date: "2026-02-26",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_SEMIFINAL",
+      sideA:
+        "WINNER_M1",
+      sideB:
+        "WINNER_M2",
+      bestOf: 5,
+      winnerTo: "M12",
+      loserTo: "M10",
+    },
+
+    {
+      id: "M8",
+      date: "2026-02-27",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_SEMIFINAL",
+      sideA:
+        "WINNER_M3",
+      sideB:
+        "WINNER_M4",
+      bestOf: 5,
+      winnerTo: "M12",
+      loserTo: "M9",
+    },
+    // =============================================
+    // LOWER BRACKET QUARTERFINALS
+    // =============================================
+    {
+      id: "M9",
+      date: "2026-03-02",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_QUARTERFINAL",
+      sideA:
+        "LOSER_M8",
+      sideB:
+        "WINNER_M6",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M11",
+    },
+    {
+      id: "M10",
+      date: "2026-03-03",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_QUARTERFINAL",
+      sideA:
+        "LOSER_M7",
+      sideB:
+        "WINNER_M5",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M11",
+    },
+    // =============================================
+    // LOWER BRACKET SEMIFINAL
+    // =============================================
+    {
+      id: "M11",
+      date: "2026-03-05",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_SEMIFINAL",
+      sideA:
+        "WINNER_M9",
+      sideB:
+        "WINNER_M10",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M13",
+    },
+    // =============================================
+    // UPPER BRACKET FINAL
+    // =============================================
+    {
+      id: "M12",
+      date: "2026-03-04",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "UPPER_FINAL",
+      sideA:
+        "WINNER_M7",
+      sideB:
+        "WINNER_M8",
+      bestOf: 5,
+      winnerTo: "M14",
+      loserTo: "M13",
+    },
+    // =============================================
+    // LOWER BRACKET FINAL
+    // =============================================
+    {
+      id: "M13",
+      date: "2026-03-07",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "LOWER_FINAL",
+      sideA:
+        "WINNER_M11",
+      sideB:
+        "LOSER_M12",
+      bestOf: 5,
+      eliminationMatch: true,
+      winnerTo: "M14",
+    },
+    // =============================================
+    // GRAND FINAL
+    // =============================================
+    {
+      id: "M14",
+      date: "2026-03-08",
+      time: "17:00",
+      timezone: "Asia/Beijing",
+      round:
+        "GRAND_FINAL",
+      sideA:
+        "WINNER_M12",
+      sideB:
+        "WINNER_M13",
+      bestOf: 5,
+      championshipMatch: true,
+    },
   ],
-};
+}),
+  ]
+}
 
 /* export const LPL_2026_SPRING = {
   stages: [
@@ -1112,28 +1623,331 @@ export const LPL_2026_SUMMER = {
 
 export const CBLOL_2026_WINTER = {
   stages: [
+    // =================================================
+    // REGULAR SEASON
+    // =================================================
     stage({
-      type: STAGE_TYPES.REGULAR_SEASON,
-      format: FORMAT_TYPES.SINGLE_ROUND_ROBIN,
-      matchRules: MATCH_RULES.BO1,
-      draftRules: DRAFT_RULES.STANDARD,
+      id: "REGULAR_SEASON",
+      type:
+        STAGE_TYPES.REGULAR_SEASON,
+      format:
+        FORMAT_TYPES.SINGLE_ROUND_ROBIN,
+      matchRules:
+        MATCH_RULES.BO1,
+      draftRules:
+        DRAFT_RULES.STANDARD,
       teamsQualified: 8,
-      realCalendar: true,
-      calendarRules: {
-      totalWeeks: 3,
-      allowedDays: [5, 6],
-      matchesPerDay: 5,
-      matchesPerWeek: 10,
-      }
-    }),
-    stage({
-      type: STAGE_TYPES.PLAYOFFS,
-      format: FORMAT_TYPES.DOUBLE_ELIMINATION,
-      matchRules: {
-        early: MATCH_RULES.BO3,
-        late: MATCH_RULES.BO5,
+      standingsRules: {
+        tiebreakers: [
+          "HEAD_TO_HEAD",
+          "GAME_DIFFERENCE",
+          "BO1_TIEBREAKER",
+        ],
       },
-      draftRules: DRAFT_RULES.FEARLESS,
+      qualification: {
+        playoffsRound2: [1,2],
+        playoffsRound1: [3,4],
+        playIn: [5,6,7,8],
+      },
+    }),
+    // =================================================
+    // PLAY-IN
+    // =================================================
+    stage({
+      id: "PLAY_IN",
+      type:
+        STAGE_TYPES.PLAY_IN,
+      format:
+        FORMAT_TYPES.HYBRID_ELIMINATION,
+      matchRules:
+        MATCH_RULES.BO5,
+      draftRules:
+        DRAFT_RULES.FEARLESS,
+      qualifiedTeams: 2,
+      eliminatedTeams: 1,
+      bracket: [
+
+        // =============================================
+        // MATCH 1
+        // =============================================
+        {
+          id: "PI1",
+          date: "2026-02-02",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "PLAY_IN_ROUND_1",
+          sideA:
+            "SEED_5",
+          sideB:
+            "SEED_6",
+          bestOf: 3,
+          winnerQualifies:
+            true,
+          loserTo:
+            "PI3",
+        },
+        // =============================================
+        // MATCH 2
+        // =============================================
+        {
+          id: "PI2",
+          date: "2026-02-03",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "PLAY_IN_ROUND_1",
+          sideA:
+            "SEED_7",
+          sideB:
+            "SEED_8",
+          bestOf: 3,
+          loserEliminated:
+            true,
+          winnerTo:
+            "PI3",
+        },
+        // =============================================
+        // LAST CHANCE
+        // =============================================
+        {
+          id: "PI3",
+          date: "2026-02-03",
+          time: "15:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "LAST_CHANCE",
+          sideA:
+            "LOSER_PI1",
+          sideB:
+            "WINNER_PI2",
+          bestOf: 5,
+          winnerQualifies:
+            true,
+          loserEliminated:
+            true,
+        },
+      ],
+    }),
+    // =================================================
+    // PLAYOFFS
+    // =================================================
+    stage({
+      id: "PLAYOFFS",
+      type:
+        STAGE_TYPES.PLAYOFFS,
+      format:
+        FORMAT_TYPES.DOUBLE_ELIMINATION,
+      matchRules: {
+        early:
+          MATCH_RULES.BO3,
+        late:
+          MATCH_RULES.BO5,
+      },
+      draftRules:
+        DRAFT_RULES.FEARLESS,
+      qualification: {
+        firstStand: {
+          qualifiedTeams: 1,
+          source:
+            "PLAYOFF_CHAMPION",
+        },
+      },
+      bracket: [
+        // =============================================
+        // ROUND 1
+        // =============================================
+        {
+          id: "M1",
+          date: "2026-02-07",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "UPPER_ROUND_1",
+          sideA:
+            "SEED_4",
+          sideB:
+            "PLAY_IN_WINNER_1",
+          bestOf: 3,
+          winnerTo:
+            "M4",
+          loserTo:
+            "M3",
+        },
+        {
+          id: "M2",
+          date: "2026-02-07",
+          time: "15:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "UPPER_ROUND_1",
+          sideA:
+            "SEED_3",
+          sideB:
+            "PLAY_IN_WINNER_2",
+          bestOf: 3,
+          winnerTo:
+            "M5",
+          loserTo:
+            "M3",
+        },
+        // =============================================
+        // LOWER ROUND 1
+        // =============================================
+        {
+          id: "M3",
+          date: "2026-02-14",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "LOWER_ROUND_1",
+          sideA:
+            "LOSER_M1",
+          sideB:
+            "LOSER_M2",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M6",
+        },
+        // =============================================
+        // ROUND 2
+        // =============================================
+        {
+          id: "M4",
+          date: "2026-02-08",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "UPPER_SEMIFINAL",
+          sideA:
+            "SEED_1",
+          sideB:
+            "SEED_1_CHOICE",
+          bestOf: 3,
+          winnerTo:
+            "M8",
+          loserTo:
+            "M7",
+        },
+        {
+          id: "M5",
+          date: "2026-02-08",
+          time: "15:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "UPPER_SEMIFINAL",
+          sideA:
+            "SEED_2",
+          sideB:
+            "REMAINING_UPPER_WINNER",
+          bestOf: 3,
+          winnerTo:
+            "M8",
+          loserTo:
+            "M6",
+        },
+
+        // =============================================
+        // LOWER ROUND 2
+        // =============================================
+        {
+          id: "M6",
+          date: "2026-02-15",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "LOWER_ROUND_2",
+          sideA:
+            "WINNER_M3",
+          sideB:
+            "LOSER_M5",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M7",
+        },
+        // =============================================
+        // LOWER ROUND 3
+        // =============================================
+        {
+          id: "M7",
+          date: "2026-02-21",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "LOWER_ROUND_3",
+          sideA:
+            "WINNER_M6",
+          sideB:
+            "LOSER_M4",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M9",
+        },
+        // =============================================
+        // UPPER FINAL
+        // =============================================
+        {
+          id: "M8",
+          date: "2026-02-22",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "UPPER_FINAL",
+          sideA:
+            "WINNER_M4",
+          sideB:
+            "WINNER_M5",
+          bestOf: 5,
+          winnerTo:
+            "M10",
+          loserTo:
+            "M9",
+        },
+        // =============================================
+        // LOWER FINAL
+        // =============================================
+        {
+          id: "M9",
+          date: "2026-02-28",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "LOWER_FINAL",
+          sideA:
+            "WINNER_M7",
+          sideB:
+            "LOSER_M8",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M10",
+        },
+        // =============================================
+        // GRAND FINAL
+        // =============================================
+        {
+          id: "M10",
+          date: "2026-03-01",
+          time: "13:00",
+          timezone: "America/Sao_Paulo",
+          round:
+            "GRAND_FINAL",
+          sideA:
+            "WINNER_M8",
+          sideB:
+            "WINNER_M9",
+          bestOf: 5,
+          championshipMatch:
+            true,
+        },
+      ],
     }),
   ],
 };
@@ -1178,25 +1992,203 @@ export const CBLOL_2026_SUMMER = {
 
 export const LCP_2026_WINTER = {
   stages: [
+    // =================================================
+    // REGULAR SEASON
+    // =================================================
     stage({
-      type: STAGE_TYPES.REGULAR_SEASON,
-      format: FORMAT_TYPES.SINGLE_ROUND_ROBIN,
-      matchRules: MATCH_RULES.BO3,
-      draftRules: DRAFT_RULES.STANDARD,
+      id: "REGULAR_SEASON",
+      type:
+        STAGE_TYPES.REGULAR_SEASON,
+      format:
+        FORMAT_TYPES.SINGLE_ROUND_ROBIN,
+      matchRules:
+        MATCH_RULES.BO3,
+      draftRules:
+        DRAFT_RULES.STANDARD,
       teamsQualified: 6,
-      realCalendar: true,
-      calendarRules: {
-      totalWeeks: 4,
-      allowedDays: [4, 5, 6, 0],
-      matchesPerDay: 2,
-      matchesPerWeek: 8,
-      }
+      standingsRules: {
+        tiebreakers: [
+          "SERIES_WINS",
+          "GAME_DIFFERENCE",
+          "HEAD_TO_HEAD",
+        ],
+      },
+      qualification: {
+        playoffsRound2: [1,2],
+        playoffsRound1: [3,4,5,6],
+        eliminated: [7,8],
+      },
     }),
+    // =================================================
+    // PLAYOFFS
+    // =================================================
     stage({
-      type: STAGE_TYPES.PLAYOFFS,
-      format: FORMAT_TYPES.DOUBLE_ELIMINATION,
-      matchRules: MATCH_RULES.BO5,
-      draftRules: DRAFT_RULES.FEARLESS,
+      id: "PLAYOFFS",
+      type:
+        STAGE_TYPES.PLAYOFFS,
+      format:
+        FORMAT_TYPES.DOUBLE_ELIMINATION,
+      matchRules:
+        MATCH_RULES.BO5,
+      draftRules:
+        DRAFT_RULES.FEARLESS,
+      qualification: {
+        firstStand: {
+          qualifiedTeams: 1,
+          source:
+            "PLAYOFF_CHAMPION",
+        },
+      },
+      bracket: [
+        // =============================================
+        // ROUND 1
+        // =============================================
+        {
+          id: "M1",
+          date: "2026-02-12",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "UPPER_ROUND_1",
+          sideA:
+            "SEED_3",
+          sideB:
+            "SEED_6",
+          bestOf: 5,
+          winnerTo:
+            "M3",
+        },
+        {
+          id: "M2",
+          date: "2026-02-13",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "UPPER_ROUND_1",
+          sideA:
+            "SEED_4",
+          sideB:
+            "SEED_5",
+          bestOf: 5,
+          winnerTo:
+            "M4",
+        },
+        // =============================================
+        // ROUND 2
+        // =============================================
+        {
+          id: "M3",
+          date: "2026-02-14",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "UPPER_SEMIFINAL",
+          sideA:
+            "SEED_1",
+          sideB:
+            "WINNER_M1",
+          bestOf: 5,
+          winnerTo:
+            "M6",
+          loserTo:
+            "M5",
+        },
+        {
+          id: "M4",
+          date: "2026-02-15",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "UPPER_SEMIFINAL",
+          sideA:
+            "SEED_2",
+          sideB:
+            "WINNER_M2",
+          bestOf: 5,
+          winnerTo:
+            "M6",
+          loserTo:
+            "M5",
+        },
+        // =============================================
+        // LOWER BRACKET
+        // =============================================
+        {
+          id: "M5",
+          date: "2026-02-26",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "LOWER_FINAL",
+          sideA:
+            "LOSER_M3",
+          sideB:
+            "LOSER_M4",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M7",
+        },
+        // =============================================
+        // UPPER FINAL
+        // =============================================
+        {
+          id: "M6",
+          date: "2026-02-27",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "UPPER_FINAL",
+          sideA:
+            "WINNER_M3",
+          sideB:
+            "WINNER_M4",
+          bestOf: 5,
+          winnerTo:
+            "M8",
+          loserTo:
+            "M7",
+        },
+        // =============================================
+        // LOWER FINAL
+        // =============================================
+        {
+          id: "M7",
+          date: "2026-02-28",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "LOWER_FINAL",
+          sideA:
+            "WINNER_M5",
+          sideB:
+            "LOSER_M6",
+          bestOf: 5,
+          eliminationMatch:
+            true,
+          winnerTo:
+            "M8",
+        },
+        // =============================================
+        // GRAND FINAL
+        // =============================================
+        {
+          id: "M8",
+          date: "2026-03-01",
+          time: "18:00",
+          timezone: "Asia/Taipei",
+          round:
+            "GRAND_FINAL",
+          sideA:
+            "WINNER_M6",
+          sideB:
+            "WINNER_M7",
+          bestOf: 5,
+          championshipMatch:
+            true,
+        },
+      ],
     }),
   ],
 };

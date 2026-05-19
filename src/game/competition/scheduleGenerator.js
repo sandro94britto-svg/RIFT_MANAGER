@@ -52,6 +52,12 @@ export function generateCompetitionSchedule(
           scheduledDate:
             matchData.date,
 
+          scheduleTime:
+            matchData.time,
+
+          timezone:
+            matchData.timezone,
+
           homeTeamId:
             matchData.homeTeamId,
 
@@ -68,15 +74,5 @@ export function generateCompetitionSchedule(
       allMatches.push(match);
     }
   }
-
-  // ===================================================
-  // DEBUG
-  // ===================================================
-
-  console.log(
-    competition.id,
-    allMatches.length
-  );
-
   return allMatches;
 }

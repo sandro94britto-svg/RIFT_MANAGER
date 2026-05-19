@@ -5,10 +5,16 @@
 import { competitions }
 from "../competition/competitions";
 
-import { generateCompetitionSchedule }
+import {
+  generateCompetitionSchedule
+}
 from "../competition/scheduleGenerator";
 
 // =====================================================
+
+console.log(
+  "INITIALIZE WORLD CALLED"
+);
 
 export function initializeWorld() {
 
@@ -25,16 +31,43 @@ export function initializeWorld() {
   // GENERATE MATCHES
   // ---------------------------------------------------
 
+  const initializedCompetitions = [];
+
   const matches = [];
 
-  for (const competition of activeCompetitions) {
+  for (
+    const competition
+    of activeCompetitions
+  ) {
+    console.log(
+  "GENERATING:",
+  competition.id
+);
 
-    const generated =
+    const generatedMatches =
       generateCompetitionSchedule(
         competition
       );
+      console.log(
+  competition.id,
+  generatedMatches.length
+);
 
-    matches.push(...generated);
+    const initializedCompetition = {
+
+      ...competition,
+
+      matches:
+        generatedMatches,
+    };
+
+    initializedCompetitions.push(
+      initializedCompetition
+    );
+
+    matches.push(
+      ...generatedMatches
+    );
   }
 
   // ---------------------------------------------------
@@ -43,11 +76,12 @@ export function initializeWorld() {
 
   return {
 
-    currentDate: "2026-01-01",
+    currentDate:
+      "2026-01-01",
 
-    competitions: activeCompetitions,
+    competitions:
+      initializedCompetitions,
 
     matches,
-
   };
 }
