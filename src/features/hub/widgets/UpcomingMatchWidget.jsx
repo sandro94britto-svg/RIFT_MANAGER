@@ -5,6 +5,15 @@ import { teams } from "../../../data/teams";
 export default function UpcomingMatchWidget() {
 
   const { activeSave } = useGame();
+
+    // =====================================================
+  // SAFETY
+  // =====================================================
+
+  if (!activeSave) {
+    return null;
+  }
+
   const world = activeSave.world;
 
   const teamId = activeSave.selectedTeam.id;

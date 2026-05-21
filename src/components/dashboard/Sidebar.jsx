@@ -1,15 +1,54 @@
-import { sidebarSections } from "../../data/sidebarSections";
+// =====================================================
+// Sidebar.jsx
+// =====================================================
 
-import { useGame } from "../../context/GameContext";
+import { NavLink }
+from "react-router-dom";
 
-export default function Sidebar({
-  activeMenu,
-  setActiveMenu,
-}) {
+import { sidebarSections }
+from "../../data/sidebarSections";
+
+import { useGame }
+from "../../context/GameContext";
+
+// =====================================================
+
+export default function Sidebar() {
 
   const { activeSave } = useGame();
 
+  // ===================================================
+  // SAFETY
+  // ===================================================
+
+  if (!activeSave) {
+
+    return null;
+  }
+
+  // ===================================================
+  // DYNAMIC ROUTES
+  // ===================================================
+
+  const routes = {
+
+    Hub:
+      "/dashboard",
+
+    Calendrier:
+      "/dashboard/calendar",
+
+    Club:
+      `/dashboard/club/${activeSave.selectedTeam.id}`,
+
+  };
+
+  // ===================================================
+  // RENDER
+  // ===================================================
+
   return (
+
     <div className="
       w-[225px]
       bg-[#151922]
@@ -21,28 +60,20 @@ export default function Sidebar({
       overflow-y-auto
     ">
 
-      {/* TEAM */}
-      <div className="mb-10">
-
-        <img
-          src={activeSave.selectedTeam.logo}
-          className="w-20 h-20 object-contain mb-4"
-        />
-
-        <h2 className="text-white text-xl font-bold">
-          {activeSave.selectedTeam.name}
-        </h2>
-
-      </div>
-
       {/* SECTIONS */}
-      <div className="flex flex-col gap-8">
 
-        {sidebarSections.map((section) => (
+      <div className="
+        flex
+        flex-col
+        gap-8
+      ">
+
+        {sidebarSections.map(section => (
 
           <div key={section.title}>
 
             {/* SECTION TITLE */}
+
             <div className="
               text-xs
               text-white/30
@@ -50,34 +81,87 @@ export default function Sidebar({
               tracking-widest
               mb-3
             ">
+
               {section.title}
+
             </div>
 
             {/* MENUS */}
-            <div className="flex flex-col gap-2">
 
-              {section.menus.map((menu) => (
+            <div className="
+              flex
+              flex-col
+              gap-2
+            ">
 
-                <button
-                  key={menu}
-                  onClick={() => setActiveMenu(menu)}
-                  className={`
-                    text-left
-                    px-4
-                    py-3
-                    rounded-xl
-                    transition
+              {section.menus.map(menu => {
 
-                    ${activeMenu === menu
-                      ? "bg-blue-600 text-white"
-                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                const path =
+                  routes[menu.label];
+
+                // ===============================
+                // DISABLED MENU
+                // ===============================
+
+                if (!path) {
+
+                  return (
+
+                    <div
+                      key={menu.label}
+                      className="
+                        px-4
+                        py-3
+                        rounded-xl
+                        text-white/30
+                        cursor-default
+                      "
+                    >
+
+                      {menu.label}
+
+                    </div>
+
+                  );
+                }
+
+                // ===============================
+                // ACTIVE MENU
+                // ===============================
+
+                return (
+
+                  <NavLink
+                    key={menu.label}
+
+                    to={path}
+
+                    end={
+                      path === "/dashboard"
                     }
-                  `}
-                >
-                  {menu}
-                </button>
 
-              ))}
+                    className={({ isActive }) => `
+                      text-left
+                      px-4
+                      py-3
+                      rounded-xl
+                      transition
+
+                      ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "text-white/70 hover:bg-white/5 hover:text-white"
+                      }
+                    `}
+                  >
+
+                    {menu.label}
+
+                  </NavLink>
+
+                );
+
+              })}
 
             </div>
 

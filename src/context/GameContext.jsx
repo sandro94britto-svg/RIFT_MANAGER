@@ -1,52 +1,191 @@
-import { createContext, useContext, useState, useEffect } from "react";
+// =====================================================
+// GameContext.jsx
+// =====================================================
 
-const GameContext = createContext();
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+}
+from "react";
 
-export function GameProvider({ children }) {
-    const [saves, setSaves] = useState(() => {
-        const saved = localStorage.getItem("saves");
-        return saved ? JSON.parse(saved) : [];
+// =====================================================
+
+const GameContext =
+  createContext();
+
+// =====================================================
+
+export function GameProvider({
+  children,
+}) {
+
+  // ===================================================
+  // SAVES
+  // ===================================================
+
+  const [saves, setSaves] =
+    useState(() => {
+
+      const saved =
+        localStorage.getItem(
+          "saves"
+        );
+
+      return saved
+        ? JSON.parse(saved)
+        : [];
     });
 
-    const [activeSave, setActiveSave] = useState(null);
+  // ===================================================
+  // ACTIVE SAVE ID
+  // ===================================================
 
-    useEffect(() => {
-        localStorage.setItem("saves", JSON.stringify(saves));
-    }, [saves]);
+  const [activeSaveId, setActiveSaveId] =
+    useState(() => {
 
-    const createSave = (newSave) => {
-        const savewithId = {
-            ...newSave,
-            id: crypto.randomUUID(),
-            createAT: Date.now(),
-    };
+      return localStorage.getItem(
+        "activeSaveId"
+      );
+    });
 
-    setSaves(prev => [...prev, savewithId]);
-    setActiveSave(savewithId);
-    return savewithId;
-    };
+  // ===================================================
+  // ACTIVE SAVE
+  // ===================================================
 
-    const loadSave = (id) => {
-        const found = saves.find(s => s.id === id);
-        setActiveSave(found || null);
-    };
+  const activeSave =
+    saves.find(
+      save =>
+        save.id === activeSaveId
+    ) || null;
 
-    const deleteSave = (id) => {
-        setSaves(prev => 
-            prev.filter(save => save.id !== id)
-        );
-        if (activeSave?.id === id) {
-            setActiveSave(null);
-        }
-    };
+  // ===================================================
+  // SAVE LOCAL STORAGE
+  // ===================================================
 
-    return (
-        <GameContext.Provider value={{ saves, setSaves, activeSave, setActiveSave, createSave, loadSave, deleteSave }}>
-            {children}
-        </GameContext.Provider>
+  useEffect(() => {
+
+    localStorage.setItem(
+      "saves",
+      JSON.stringify(saves)
     );
+
+  }, [saves]);
+
+  // ===================================================
+  // SAVE ACTIVE ID
+  // ===================================================
+
+  useEffect(() => {
+
+    if (activeSaveId) {
+
+      localStorage.setItem(
+        "activeSaveId",
+        activeSaveId
+      );
+
+    } else {
+
+      localStorage.removeItem(
+        "activeSaveId"
+      );
+    }
+
+  }, [activeSaveId]);
+
+  // ===================================================
+  // CREATE SAVE
+  // ===================================================
+
+  const createSave = (
+    newSave
+  ) => {
+
+    const saveWithId = {
+
+      ...newSave,
+
+      id:
+        crypto.randomUUID(),
+
+      createdAt:
+        Date.now(),
+    };
+
+    setSaves(prev => [
+      ...prev,
+      saveWithId,
+    ]);
+
+    setActiveSaveId(
+      saveWithId.id
+    );
+
+    return saveWithId;
+  };
+
+  // ===================================================
+  // LOAD SAVE
+  // ===================================================
+
+  const loadSave = (id) => {
+
+    setActiveSaveId(id);
+  };
+
+  // ===================================================
+  // DELETE SAVE
+  // ===================================================
+
+  const deleteSave = (id) => {
+
+    setSaves(prev =>
+      prev.filter(
+        save => save.id !== id
+      )
+    );
+
+    if (activeSaveId === id) {
+
+      setActiveSaveId(null);
+    }
+  };
+
+  // ===================================================
+  // PROVIDER
+  // ===================================================
+
+  return (
+
+    <GameContext.Provider
+      value={{
+
+        saves,
+        setSaves,
+
+        activeSave,
+        activeSaveId,
+        setActiveSaveId,
+
+        createSave,
+        loadSave,
+        deleteSave,
+      }}
+    >
+
+      {children}
+
+    </GameContext.Provider>
+  );
 }
 
+// =====================================================
+
 export function useGame() {
-  return useContext(GameContext);
+
+  return useContext(
+    GameContext
+  );
 }

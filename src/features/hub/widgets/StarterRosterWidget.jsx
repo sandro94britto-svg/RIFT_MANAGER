@@ -3,10 +3,19 @@ import { players }  from "../../../data/players";
 
 
 
-
 export default function StarterRosterWidget() {
 
   const { activeSave } = useGame();
+
+  if (!activeSave) {
+    return null;
+  }  // =====================================================
+  // SAFETY
+  // =====================================================
+
+  if (!activeSave) {
+    return null;
+  }
 
   const teamPlayers = players.filter(
   player => player.teamId === activeSave.selectedTeam.id

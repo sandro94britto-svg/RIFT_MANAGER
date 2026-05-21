@@ -12,10 +12,6 @@ from "../competition/scheduleGenerator";
 
 // =====================================================
 
-console.log(
-  "INITIALIZE WORLD CALLED"
-);
-
 export function initializeWorld() {
 
   // ---------------------------------------------------
@@ -39,10 +35,7 @@ export function initializeWorld() {
     const competition
     of activeCompetitions
   ) {
-    console.log(
-  "GENERATING:",
   competition.id
-);
 
     const generatedMatches =
       generateCompetitionSchedule(
@@ -78,6 +71,8 @@ export function initializeWorld() {
 
     currentDate:
       "2026-01-01",
+    currentTime:
+      "09:00",
 
     competitions:
       initializedCompetitions,

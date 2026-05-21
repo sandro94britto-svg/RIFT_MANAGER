@@ -7,6 +7,14 @@ export default function StandingsWidget() {
 
   const { activeSave } = useGame();
 
+    // =====================================================
+  // SAFETY
+  // =====================================================
+
+  if (!activeSave) {
+    return null;
+  }
+
   if (!activeSave?.world?.competitions) {
     return (
       <div className="bg-white/5 p-4 rounded-xl h-full flex items-center justify-center">
@@ -23,12 +31,13 @@ export default function StandingsWidget() {
     );
   };
 
-const getTeamData = (teamId) => {
-    "${teamId}",
-    teams.map(t => `"${t.id}"`)
+const getTeamData = (
+  teamId
+) => {
 
   return teams.find(
-    (team) => team.id === teamId
+    (team) =>
+      team.id === teamId
   );
 };
   return (
@@ -123,10 +132,14 @@ const getTeamData = (teamId) => {
                     />
 
                     <Link
-                        to={`/team/${team.id}`}
-                        className="truncate"
+                      to={`/dashboard/club/${team.teamId}`}
+                      className="
+                        hover:underline
+                        underline-offset-4
+                        truncate
+                      "
                     >
-                     {teamData?.name || team.teamId}
+                      {teamData?.name || team.teamId}
                     </Link>
                     <span className="ml-auto">
                       {team.wins}-{team.losses}
