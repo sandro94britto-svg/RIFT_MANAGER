@@ -1,6 +1,7 @@
 import { useGame } from "../../../context/GameContext";
 import { getNextMatch } from "../../../game/world/selector";
 import { teams } from "../../../data/teams";
+import { Link } from "react-router-dom";
 
 export default function UpcomingMatchWidget() {
 
@@ -94,13 +95,16 @@ export default function UpcomingMatchWidget() {
               className="w-16 h-16 object-contain"
             />
 
-            <span className="
-              text-sm
-              font-medium
-              text-center
-            ">
+            <Link
+              to={`/dashboard/club/${homeTeam.id}`}
+              className="
+                hover:underline
+                underline-offset-4
+                truncate
+                "
+              >
               {homeTeam?.shortname}
-            </span>
+            </Link>
 
           </div>
 
@@ -127,14 +131,16 @@ export default function UpcomingMatchWidget() {
               alt={awayTeam?.name}
               className="w-16 h-16 object-contain"
             />
-
-            <span className="
-              text-sm
-              font-medium
-              text-center
-            ">
+             <Link
+              to={`/dashboard/club/${awayTeam.id}`}
+              className="
+                hover:underline
+                underline-offset-4
+                truncate
+                "
+              >
               {awayTeam?.shortname}
-            </span>
+            </Link>
 
           </div>
 

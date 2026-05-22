@@ -12,7 +12,9 @@ export default function MatchList({
       rounded-xl
       p-1
       h-full
-      overflow-y-auto
+      min-h-0
+      flex
+      flex-col
     ">
 
       <h2 className="
@@ -23,7 +25,11 @@ export default function MatchList({
         Calendar
       </h2>
 
-      <div className="space-y-2">
+      <div className="
+        space-y-2
+        overflow-y-auto
+        flex-1
+        min-h-0">
 
         {matches.map((match) => (
 

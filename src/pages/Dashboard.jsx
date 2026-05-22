@@ -22,6 +22,7 @@ export default function Dashboard() {
       h-screen
       bg-[#0f172a]
       text-white
+      overflow-hidden
     ">
 
       {/* SIDEBAR */}
@@ -43,8 +44,10 @@ export default function Dashboard() {
 
         <main className="
           flex-1
-          overflow-y-auto
           p-6
+          overflow-hidden
+          flex  
+          flex-col
         ">
 
           <Outlet />

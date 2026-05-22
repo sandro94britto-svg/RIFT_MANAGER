@@ -1,4 +1,5 @@
 import { teams } from "../../../data/teams";
+import { Link } from "react-router-dom";
 
 export default function MatchDetails({
   match,
@@ -9,7 +10,6 @@ export default function MatchDetails({
       <div className="
         bg-white/5
         rounded-xl
-        h-full
         flex
         items-center
         justify-center
@@ -32,7 +32,6 @@ export default function MatchDetails({
       bg-white/5
       rounded-xl
       p-8
-      h-full
       flex
       flex-col
     ">
@@ -74,12 +73,17 @@ export default function MatchDetails({
               className="w-28 h-28 object-contain"
             />
 
-            <span className="
-              text-xl
-              font-semibold
-            ">
+            <Link
+              to={`/dashboard/club/${homeTeam?.id}`}
+              onClick={(e) => e.stopPropagation()}
+              className="
+                text-sm
+                hover:underline
+                underline-offset-4
+              "
+            >
               {homeTeam?.name}
-            </span>
+            </Link>
 
           </div>
 
@@ -106,12 +110,17 @@ export default function MatchDetails({
               className="w-28 h-28 object-contain"
             />
 
-            <span className="
-              text-xl
-              font-semibold
-            ">
+            <Link
+              to={`/dashboard/club/${awayTeam?.id}`}
+              onClick={(e) => e.stopPropagation()}
+              className="
+                text-sm
+                hover:underline
+                underline-offset-4
+              "
+            >
               {awayTeam?.name}
-            </span>
+            </Link>
 
           </div>
 

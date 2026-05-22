@@ -1,73 +1,30 @@
-import { useState } from "react";
-import { useGame } from "../../../context/GameContext";
-import MatchList from "../components/MatchList";
-import MatchDetails from "../components/MatchDetails";
+import { useGame }
+from "../../../context/GameContext";
+
+import TeamCalendar
+from "../../club/components/TeamCalendar";
 
 export default function CalendarPage() {
 
   const { activeSave } = useGame();
 
-  const world = activeSave.world;
-  const teamId = activeSave.selectedTeam.id;
-
   // ---------------------------------------------------
-  // GET TEAM MATCHES
+  // SAFETY
   // ---------------------------------------------------
 
-  const matches = world.competitions.flatMap(
-    (competition) =>
-      competition.matches.filter(
-        (match) =>
-          match.homeTeamId === teamId ||
-          match.awayTeamId === teamId
-      )
-  );
+  if (!activeSave) {
+    return null;
+  }
 
-  // ---------------------------------------------------
-  // SORT BY DATE
-  // ---------------------------------------------------
+return (
 
-  matches.sort(
-    (a, b) =>
-      new Date(a.scheduledDate) -
-      new Date(b.scheduledDate)
-  );
+  <div className="flex-1 min-h-0">
 
-  // ---------------------------------------------------
-  // SELECTED MATCH
-  // ---------------------------------------------------
+    <TeamCalendar
+      world={activeSave.world}
+      teamId={activeSave.selectedTeam.id}
+    />
 
-  const [selectedMatch, setSelectedMatch] =
-    useState(matches[0] || null);
+  </div>
 
-  return (
-    <div className="
-      grid
-      grid-cols-12
-      gap-6
-      h-full
-    ">
-
-      {/* LEFT */}
-      <div className="col-span-4 h-full">
-
-        <MatchList
-          matches={matches}
-          selectedMatch={selectedMatch}
-          setSelectedMatch={setSelectedMatch}
-        />
-
-      </div>
-
-      {/* RIGHT */}
-      <div className="col-span-8 h-full">
-
-        <MatchDetails
-          match={selectedMatch}
-        />
-
-      </div>
-
-    </div>
-  );
-}
+)};

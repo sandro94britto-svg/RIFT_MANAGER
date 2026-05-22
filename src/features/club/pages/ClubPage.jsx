@@ -14,21 +14,24 @@ from "../../../context/GameContext";
 import { teams }
 from "../../../data/teams";
 
+import TeamCalendar from "../components/TeamCalendar";
+
 // =====================================================
 
 export default function ClubPage() {
 
   const { teamId } =
     useParams();
+  
+  const { activeSave } = useGame();
 
-  const { activeSave } =
-    useGame();
+  const world = activeSave.world;   
 
   // ===================================================
   // TEAM
   // ===================================================
 
-  const viewedTeam =
+  const team =
 
     teams.find(
       team =>
@@ -39,7 +42,7 @@ export default function ClubPage() {
   // SAFETY
   // ===================================================
 
-  if (!viewedTeam) {
+  if (!team) {
 
     return (
 
@@ -59,7 +62,7 @@ export default function ClubPage() {
 
   const isOwnTeam =
 
-    viewedTeam.id ===
+    team.id ===
     activeSave?.selectedTeam?.id;
 
   // ===================================================
@@ -105,11 +108,14 @@ export default function ClubPage() {
 
   return (
 
-    <div className="
-      flex
-      flex-col
-      gap-6
-    ">
+      <div className="
+        h-full
+        flex
+        flex-col
+        gap-6
+        min-h-0
+        overflow-hidden
+      ">
 
       {/* ============================================= */}
       {/* TABS */}
@@ -167,12 +173,14 @@ export default function ClubPage() {
       {/* CONTENT */}
       {/* ============================================= */}
 
-      <div className="
-        bg-[#111827]
-        rounded-2xl
-        p-6
-        min-h-[500px]
-      ">
+        <div className="
+          bg-[#111827]
+          rounded-2xl
+          p-6
+          flex-1
+          min-h-0
+          overflow-hidden
+        ">
 
         {/* GENERAL */}
 
@@ -215,9 +223,12 @@ export default function ClubPage() {
         {activeTab === "Calendrier" && (
 
           <div className="
-            text-white
+            h-full min-h-0
           ">
-            Calendrier
+          <TeamCalendar
+            world={world}
+            teamId={team.id}
+          />
           </div>
 
         )}

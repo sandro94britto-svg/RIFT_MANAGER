@@ -1,4 +1,5 @@
 import { teams } from "../../../data/teams";
+import { Link } from "react-router-dom";
 
 export default function MatchListItem({
   match,
@@ -67,9 +68,17 @@ export default function MatchListItem({
             className="w-6 h-6 object-contain"
           />
 
-          <span className="text-sm">
+          <Link
+            to={`/dashboard/club/${homeTeam?.id}`}
+            onClick={(e) => e.stopPropagation()}
+            className="
+              text-sm
+              hover:underline
+              underline-offset-4
+            "
+          >
             {homeTeam?.name}
-          </span>
+          </Link>
 
         </div>
 
@@ -83,9 +92,17 @@ export default function MatchListItem({
           gap-2
         ">
 
-          <span className="text-sm">
-            {awayTeam?.name}
-          </span>
+        <Link
+          to={`/dashboard/club/${awayTeam?.id}`}
+          onClick={(e) => e.stopPropagation()}
+          className="
+            text-sm
+            hover:underline
+            underline-offset-4
+          "
+        >
+          {awayTeam?.name}
+        </Link>
 
           <img
             src={awayTeam?.logo}
